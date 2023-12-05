@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SHJ.BaseArchitecture.Application.Contracts\SHJ.BaseArchitecture.Application.Contracts.csproj" />
-  </ItemGroup>
-
 </Project>

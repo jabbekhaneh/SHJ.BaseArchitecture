@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "SHJ.BaseArchitecture.Application.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SHJ.BaseArchitecture.Application.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SHJ.BaseArchitecture.Application.Contracts.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SHJ.BaseArchitecture.Application.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../SHJ.BaseArchitecture.Application.Contracts/SHJ.BaseArchitecture.Application.Contracts.csproj",
+      "msbuildProject": "../SHJ.BaseArchitecture.Application.Contracts/SHJ.BaseArchitecture.Application.Contracts.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "SHJ.BaseArchitecture.Application.Contracts >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\": {},
@@ -40,7 +59,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Application.Contracts\\SHJ.BaseArchitecture.Application.Contracts.csproj": {
+              "projectPath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Application.Contracts\\SHJ.BaseArchitecture.Application.Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
