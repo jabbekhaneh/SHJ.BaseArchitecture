@@ -1,0 +1,134 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "SHJ.BaseFramework.Domain/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
+        }
+      },
+      "SHJ.BaseFramework.Repository/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SHJ.BaseFramework.Repository.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/SHJ.BaseFramework.Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SHJ.BaseFramework.Domain/1.0.0": {
+      "sha512": "fu/LZPbdJPa1k4JpWBhmOXZTjatwILSzDXum+cP2tsJL0SI9MyCf+o/wKdlHec9KsAaAAEPnBQ5Fks1Y6Y0Zmw==",
+      "type": "package",
+      "path": "shj.baseframework.domain/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/SHJ.BaseFramework.Domain.dll",
+        "logo.png",
+        "shj.baseframework.domain.1.0.0.nupkg.sha512",
+        "shj.baseframework.domain.nuspec"
+      ]
+    },
+    "SHJ.BaseFramework.Repository/1.0.0": {
+      "sha512": "N6id9ROJsOL//Q33Jae0GwOzck7MoqcBAZyGFrf1mtfdnNM1B7yj9E8m5WpMNi+RxmHbfuigbR3V0C5Vk83+jQ==",
+      "type": "package",
+      "path": "shj.baseframework.repository/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/SHJ.BaseFramework.Repository.dll",
+        "logo.png",
+        "shj.baseframework.repository.1.0.0.nupkg.sha512",
+        "shj.baseframework.repository.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "SHJ.BaseFramework.Domain >= 1.0.0",
+      "SHJ.BaseFramework.Repository >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Domain\\SHJ.BaseArchitecture.Domain.csproj",
+      "projectName": "SHJ.BaseArchitecture.Domain",
+      "projectPath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Domain\\SHJ.BaseArchitecture.Domain.csproj",
+      "packagesPath": "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\",
+      "outputPath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Domain\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Jabbekhaneh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\NUGET": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "SHJ.BaseFramework.Domain": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "SHJ.BaseFramework.Repository": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
