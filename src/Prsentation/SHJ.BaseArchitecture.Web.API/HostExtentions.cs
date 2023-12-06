@@ -8,7 +8,8 @@ public static class HostExtentions
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         builder.Services.BuildApplication();
-
+        //var options = builder.Configuration.GetValueBaseOptions();
+         
         builder.Services.AddCors(option => option.AddPolicy("EnableCorse", builder =>
         {
             builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build();

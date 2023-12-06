@@ -19,6 +19,7 @@ public class PageAppServices : BaseAppService<Page>
     [HttpPost]
     public async Task Create(CreatePageDto input)
     {
+         
         await _manager.Create(input.Title);
 
         _unitOfWork.Commit();

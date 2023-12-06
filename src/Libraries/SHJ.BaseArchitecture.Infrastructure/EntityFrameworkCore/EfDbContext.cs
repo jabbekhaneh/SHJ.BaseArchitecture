@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Options;
 using SHJ.BaseArchitecture.Domain.Dynamic;
 using SHJ.BaseFramework.Domain;
-using SHJ.BaseFramework.EntityFrameworkCore;
 using SHJ.BaseFramework.Shared;
 using System.Reflection;
 
@@ -20,9 +19,6 @@ public class EfDbContext : DbContext
         ClaimService = claimService;
         Options = baseOptions;
     }
-
-
-
     public virtual DbSet<Page> Pages { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)

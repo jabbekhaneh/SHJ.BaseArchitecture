@@ -16,7 +16,7 @@ public class DapperPageRepository : BaseDapperSqlServerData<Page>, IQueryPageRep
 
     public async Task<bool> IsExistByTitleAsync(string title)
     {
-        string query = "select count(1) from Pages where Title=@name";
+        string query = "select count(1) from Pages where Title=@title";
         return await Connection.ExecuteScalarAsync<bool>(query, new { title });
     }
 }
