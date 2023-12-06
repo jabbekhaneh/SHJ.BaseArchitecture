@@ -48,9 +48,13 @@
           "dependencies": {
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.0.2, )"
             },
             "SHJ.BaseFramework.Repository": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "SHJ.ExceptionHandler": {
               "target": "Package",
               "version": "[1.0.0, )"
             }

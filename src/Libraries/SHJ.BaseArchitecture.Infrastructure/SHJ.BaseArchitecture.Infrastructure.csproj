@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -6,14 +6,15 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
+	
 
 	<ItemGroup>
-		<PackageReference Include="SHJ.BaseFramework.Dapper" Version="1.0.0" />
-		<PackageReference Include="SHJ.BaseFramework.EntityFrameworkCore" Version="1.0.0" />
+		<PackageReference Include="SHJ.BaseFramework.Dapper" Version="1.0.2" />
+		<PackageReference Include="SHJ.BaseFramework.EntityFrameworkCore" Version="1.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj" />
+		<ProjectReference Include="..\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj" />
 	</ItemGroup>
 
 </Project>

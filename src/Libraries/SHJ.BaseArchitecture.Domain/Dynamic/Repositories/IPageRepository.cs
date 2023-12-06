@@ -1,4 +1,4 @@
-﻿namespace SHJ.BaseArchitecture.Domain.Dynamic;
+﻿namespace SHJ.BaseArchitecture.Domain.Dynamic.Repositories;
 
 public interface IPageRepository
 {

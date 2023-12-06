@@ -1,4 +1,4 @@
-﻿using SHJ.BaseArchitecture.Domain.Dynamic;
+﻿using SHJ.BaseArchitecture.Domain.Dynamic.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

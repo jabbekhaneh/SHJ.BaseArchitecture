@@ -1,4 +1,5 @@
 ﻿using SHJ.BaseArchitecture.Domain.Dynamic;
+using SHJ.BaseArchitecture.Domain.Dynamic.Repositories;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 using SHJ.BaseFramework.EntityFrameworkCore;
 

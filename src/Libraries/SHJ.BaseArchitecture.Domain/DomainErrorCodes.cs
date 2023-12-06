@@ -1,6 +1,7 @@
 ﻿namespace SHJ.BaseArchitecture.Domain;
 
-public static class DomainErrorCodes
+public enum DomainErrorCodes : int
 {
-
+    DublicatePageTitle = 9001,
+    NotBeEmptyPageTitle = 9002,
 }

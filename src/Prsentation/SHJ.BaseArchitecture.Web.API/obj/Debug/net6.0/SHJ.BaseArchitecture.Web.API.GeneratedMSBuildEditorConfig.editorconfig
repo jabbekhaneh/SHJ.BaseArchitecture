@@ -12,6 +12,6 @@ build_property.RootNamespace = SHJ.BaseArchitecture.Web.API
 build_property.ProjectDir = E:\mygit\SHJ.BaseArchitecture\src\Prsentation\SHJ.BaseArchitecture.Web.API\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = E:\mygit\SHJ.BaseArchitecture\src\Prsentation\SHJ.BaseArchitecture.Web.API
 build_property._RazorSourceGeneratorDebug = 

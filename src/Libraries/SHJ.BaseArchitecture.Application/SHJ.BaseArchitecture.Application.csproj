@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SHJ.BaseArchitecture.Application.Contracts\SHJ.BaseArchitecture.Application.Contracts.csproj" />
+    <ProjectReference Include="..\SHJ.BaseArchitecture.Infrastructure\SHJ.BaseArchitecture.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SHJ.BaseFramework.AspNet" Version="1.0.2" />
   </ItemGroup>
 
 </Project>
