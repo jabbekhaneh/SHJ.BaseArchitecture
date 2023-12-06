@@ -9,6 +9,7 @@
 	<ItemGroup>
 	  <PackageReference Include="SHJ.BaseFramework.Domain" Version="1.0.2" />
 	  <PackageReference Include="SHJ.BaseFramework.Repository" Version="1.0.2" />
+	  <PackageReference Include="SHJ.ExceptionHandler" Version="1.0.0" />
 	</ItemGroup>
 
 </Project>

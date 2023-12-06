@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\Libraries\SHJ.BaseArchitecture.Application\SHJ.BaseArchitecture.Application.csproj" />
+	  <ProjectReference Include="..\..\Libraries\SHJ.BaseArchitecture.Application\SHJ.BaseArchitecture.Application.csproj" />
 	</ItemGroup>
 
 </Project>

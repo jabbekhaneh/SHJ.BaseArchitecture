@@ -1,4 +1,5 @@
-﻿using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
+﻿using Microsoft.AspNetCore.Mvc;
+using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
 using SHJ.BaseArchitecture.Domain.Dynamic;
 using SHJ.BaseFramework.AspNet.Services;
 using SHJ.BaseFramework.Repository;
@@ -15,6 +16,7 @@ public class PageAppServices : BaseAppService<Page>
         _unitOfWork = unitOfWork;
     }
 
+    [HttpPost]
     public async Task Create(CreatePageDto input)
     {
         await _manager.Create(input.Title);
