@@ -11,15 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prsentation", "Prsentation", "{623A82AC-9D6B-4457-AB0E-943E4CC3E1E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Domain", "src\Libraries\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj", "{07B92C5C-C7A1-430F-BA13-BDC952AFEBC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Domain", "src\Libraries\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj", "{07B92C5C-C7A1-430F-BA13-BDC952AFEBC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Infrastructure", "src\Libraries\SHJ.BaseArchitecture.Infrastructure\SHJ.BaseArchitecture.Infrastructure.csproj", "{55FD9B98-5DCA-4ABC-9B3F-E3A5AA99E534}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Infrastructure", "src\Libraries\SHJ.BaseArchitecture.Infrastructure\SHJ.BaseArchitecture.Infrastructure.csproj", "{55FD9B98-5DCA-4ABC-9B3F-E3A5AA99E534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Application", "src\Libraries\SHJ.BaseArchitecture.Application\SHJ.BaseArchitecture.Application.csproj", "{E6757AC3-D016-4534-BE51-BCF890C74449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Application", "src\Libraries\SHJ.BaseArchitecture.Application\SHJ.BaseArchitecture.Application.csproj", "{E6757AC3-D016-4534-BE51-BCF890C74449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Web.API", "src\Prsentation\SHJ.BaseArchitecture.Web.API\SHJ.BaseArchitecture.Web.API.csproj", "{7FB63DF2-2161-47C6-B1C9-9E79FAAADF3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Web.API", "src\Prsentation\SHJ.BaseArchitecture.Web.API\SHJ.BaseArchitecture.Web.API.csproj", "{7FB63DF2-2161-47C6-B1C9-9E79FAAADF3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Application.Contracts", "src\Libraries\SHJ.BaseArchitecture.Application.Contracts\SHJ.BaseArchitecture.Application.Contracts.csproj", "{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Application.Contracts", "src\Libraries\SHJ.BaseArchitecture.Application.Contracts\SHJ.BaseArchitecture.Application.Contracts.csproj", "{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Domain.Test", "test\SHJ.BaseArchitecture.Domain.Test\SHJ.BaseArchitecture.Domain.Test.csproj", "{61CE367A-128C-433A-83DB-C4645D91B798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Application.Test", "test\SHJ.BaseArchitecture.Application.Test\SHJ.BaseArchitecture.Application.Test.csproj", "{6F3423F1-C583-47FC-9CD4-EB3094904BDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,14 @@ Global
 		{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CE367A-128C-433A-83DB-C4645D91B798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CE367A-128C-433A-83DB-C4645D91B798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CE367A-128C-433A-83DB-C4645D91B798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CE367A-128C-433A-83DB-C4645D91B798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F3423F1-C583-47FC-9CD4-EB3094904BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F3423F1-C583-47FC-9CD4-EB3094904BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F3423F1-C583-47FC-9CD4-EB3094904BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F3423F1-C583-47FC-9CD4-EB3094904BDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +71,8 @@ Global
 		{E6757AC3-D016-4534-BE51-BCF890C74449} = {7DBFCA99-7EDB-4D92-99BE-D8450DCB285A}
 		{7FB63DF2-2161-47C6-B1C9-9E79FAAADF3D} = {623A82AC-9D6B-4457-AB0E-943E4CC3E1E8}
 		{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3} = {7DBFCA99-7EDB-4D92-99BE-D8450DCB285A}
+		{61CE367A-128C-433A-83DB-C4645D91B798} = {F27D69D8-5B7E-4223-91E2-2EAF61F19129}
+		{6F3423F1-C583-47FC-9CD4-EB3094904BDA} = {F27D69D8-5B7E-4223-91E2-2EAF61F19129}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CEF2DE5-2767-485E-B3DD-C459E484D124}

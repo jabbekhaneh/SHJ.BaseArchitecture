@@ -6,6 +6,7 @@ using SHJ.BaseFramework.Repository;
 
 namespace SHJ.BaseArchitecture.Application.Dynamic;
 
+
 public class PageAppServices : BaseAppService<Page>
 {
     private readonly PageManager _manager;
