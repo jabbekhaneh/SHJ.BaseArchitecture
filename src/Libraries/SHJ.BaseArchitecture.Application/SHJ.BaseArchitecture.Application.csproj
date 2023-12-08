@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SHJ.BaseFramework.AspNet" Version="1.0.2" />
+    <PackageReference Include="SHJ.BaseFramework.AspNet" Version="1.0.4" />
   </ItemGroup>
 
 </Project>

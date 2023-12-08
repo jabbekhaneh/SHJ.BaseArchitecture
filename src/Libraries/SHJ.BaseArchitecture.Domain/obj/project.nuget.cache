@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kqp3HHFXLM+BIa737S76/4+RKyvHuSYa7OoJK/aqAbrMtEvYvku/G1/D2siTJYdP1JSl1T86CbKx47fuU0mHkg==",
+  "dgSpecHash": "MGC6JZG4PzQqF8HSNuwzaVN+hIPXyQX/Hws7bKzEbCPvmLQFgXz6sYV3U+e2drViIhGDZQxpgnPOVUlpmTBFTA==",
   "success": true,
   "projectFilePath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Domain\\SHJ.BaseArchitecture.Domain.csproj",
   "expectedPackageFiles": [
@@ -24,8 +24,8 @@
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\servicestack.client\\8.0.0\\servicestack.client.8.0.0.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\servicestack.interfaces\\8.0.0\\servicestack.interfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\servicestack.text\\8.0.0\\servicestack.text.8.0.0.nupkg.sha512",
-    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\shj.baseframework.domain\\1.0.2\\shj.baseframework.domain.1.0.2.nupkg.sha512",
-    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\shj.baseframework.repository\\1.0.2\\shj.baseframework.repository.1.0.2.nupkg.sha512",
+    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\shj.baseframework.domain\\1.0.4\\shj.baseframework.domain.1.0.4.nupkg.sha512",
+    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\shj.baseframework.repository\\1.0.4\\shj.baseframework.repository.1.0.4.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\shj.exceptionhandler\\1.0.0\\shj.exceptionhandler.1.0.0.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

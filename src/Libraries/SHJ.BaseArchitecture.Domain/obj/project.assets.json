@@ -398,7 +398,7 @@
           }
         }
       },
-      "SHJ.BaseFramework.Domain/1.0.2": {
+      "SHJ.BaseFramework.Domain/1.0.4": {
         "type": "package",
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
@@ -407,7 +407,7 @@
           "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
         }
       },
-      "SHJ.BaseFramework.Repository/1.0.2": {
+      "SHJ.BaseFramework.Repository/1.0.4": {
         "type": "package",
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Repository.dll": {
@@ -1201,30 +1201,30 @@
         "servicestack.text.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Domain/1.0.2": {
-      "sha512": "nl2w3xCYls/sPwa4vtcnZ+KwMHwctGoGUwisJDeo2ELh+OozvcdkzYrZ3kMcjp19FFHgKW9ZQg2vOCcyBBx9yA==",
+    "SHJ.BaseFramework.Domain/1.0.4": {
+      "sha512": "Fz6oQFi43jglGp3ox/1uDFbhIqUFtkT1Ohisz5xOTm37hNNdpSUcMBdvxner6xOLENzLhY5ihPvHFprNZWj6/Q==",
       "type": "package",
-      "path": "shj.baseframework.domain/1.0.2",
+      "path": "shj.baseframework.domain/1.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Domain.dll",
         "logo.png",
-        "shj.baseframework.domain.1.0.2.nupkg.sha512",
+        "shj.baseframework.domain.1.0.4.nupkg.sha512",
         "shj.baseframework.domain.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Repository/1.0.2": {
-      "sha512": "T6UHxhV/LLTj80wC6swGVJwZZ6uvTwW20OW05mT/P+sgr6w/5PUHq5OcaZ1dOQ8SCajoim0o2N+KFOkEWv3pZA==",
+    "SHJ.BaseFramework.Repository/1.0.4": {
+      "sha512": "y9OrQGFKH896NnL2XdVw5wouWRWHVC85KwcuFpDmaOBV/oixbFgGTrYbZGX1TuP72d75511Qk8i2p2yy3AhC9A==",
       "type": "package",
-      "path": "shj.baseframework.repository/1.0.2",
+      "path": "shj.baseframework.repository/1.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Repository.dll",
         "lib/net6.0/SHJ.BaseFramework.Repository.pdb",
         "logo.png",
-        "shj.baseframework.repository.1.0.2.nupkg.sha512",
+        "shj.baseframework.repository.1.0.4.nupkg.sha512",
         "shj.baseframework.repository.nuspec"
       ]
     },
@@ -1551,8 +1551,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "SHJ.BaseFramework.Domain >= 1.0.2",
-      "SHJ.BaseFramework.Repository >= 1.0.2",
+      "SHJ.BaseFramework.Domain >= 1.0.4",
+      "SHJ.BaseFramework.Repository >= 1.0.4",
       "SHJ.ExceptionHandler >= 1.0.0"
     ]
   },
@@ -1604,11 +1604,11 @@
         "dependencies": {
           "SHJ.BaseFramework.Domain": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.4, )"
           },
           "SHJ.BaseFramework.Repository": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.4, )"
           },
           "SHJ.ExceptionHandler": {
             "target": "Package",

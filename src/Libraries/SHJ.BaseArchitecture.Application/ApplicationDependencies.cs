@@ -12,12 +12,15 @@ public static class ApplicationDependencies
     {
         services.BuildInfrastructure();
         services.AddSHJExceptionHandler();
-        services.AddSHJBaseFrameworkAspNet();
+        services.AddSHJBaseFrameworkAspNet(option =>
+        {
+            
+        });
         return services;
     }
 
     public static void UseApplication(this IApplicationBuilder app)
     {
-        app.UseSHJExceptionHandler();
+        app.UseSHJBaseFrameworkAspNet();
     }
 }

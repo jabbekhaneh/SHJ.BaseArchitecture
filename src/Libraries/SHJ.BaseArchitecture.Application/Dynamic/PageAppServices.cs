@@ -4,6 +4,7 @@ using SHJ.BaseArchitecture.Domain.Dynamic;
 using SHJ.BaseFramework.AspNet.Services;
 using SHJ.BaseFramework.Repository;
 
+
 namespace SHJ.BaseArchitecture.Application.Dynamic;
 
 
@@ -24,6 +25,5 @@ public class PageAppServices : BaseAppService<Page>
         await _manager.Create(input.Title);
 
         _unitOfWork.Commit();
-
     }
 }
