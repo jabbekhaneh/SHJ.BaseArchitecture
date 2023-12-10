@@ -1527,9 +1527,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "SHJ.BaseFramework.Domain": "1.0.4",
-          "SHJ.BaseFramework.Repository": "1.0.4",
-          "SHJ.ExceptionHandler": "1.0.0"
+          "SHJ.BaseFramework.Domain": "1.0.4"
         },
         "compile": {
           "bin/placeholder/SHJ.BaseArchitecture.Domain.dll": {}
@@ -1542,7 +1540,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "SHJ.BaseArchitecture.Domain": "1.0.0",
+          "SHJ.BaseArchitecture.Shared": "1.0.0",
           "SHJ.BaseFramework.Dapper": "1.0.4",
           "SHJ.BaseFramework.EntityFrameworkCore": "1.0.4"
         },
@@ -1551,6 +1549,20 @@
         },
         "runtime": {
           "bin/placeholder/SHJ.BaseArchitecture.Infrastructure.dll": {}
+        }
+      },
+      "SHJ.BaseArchitecture.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SHJ.BaseArchitecture.Domain": "1.0.0",
+          "SHJ.BaseFramework.Repository": "1.0.4"
+        },
+        "compile": {
+          "bin/placeholder/SHJ.BaseArchitecture.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SHJ.BaseArchitecture.Shared.dll": {}
         }
       }
     }
@@ -3804,6 +3816,11 @@
       "type": "project",
       "path": "../SHJ.BaseArchitecture.Infrastructure/SHJ.BaseArchitecture.Infrastructure.csproj",
       "msbuildProject": "../SHJ.BaseArchitecture.Infrastructure/SHJ.BaseArchitecture.Infrastructure.csproj"
+    },
+    "SHJ.BaseArchitecture.Shared/1.0.0": {
+      "type": "project",
+      "path": "../SHJ.BaseArchitecture.Shared/SHJ.BaseArchitecture.Shared.csproj",
+      "msbuildProject": "../SHJ.BaseArchitecture.Shared/SHJ.BaseArchitecture.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {

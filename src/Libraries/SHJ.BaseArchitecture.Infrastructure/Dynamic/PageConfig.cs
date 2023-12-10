@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SHJ.BaseArchitecture.Domain.Dynamic;
+using SHJ.BaseArchitecture.Shared;
 
 namespace SHJ.BaseArchitecture.Infrastructure.Dynamic;
 
@@ -10,7 +11,9 @@ internal class PageConfig : IEntityTypeConfiguration<Page>
     {
         builder.HasKey(_ => _.Id);
 
-        builder.Property(_ => _.Title).IsRequired().HasMaxLength(PortalConsts.DefualtMaxLenght);
+        builder.Property(_ => _.Title).IsRequired()
+            .HasMaxLength(PortalConsts.DefualtMaxLenght);
+
     }
 }
 

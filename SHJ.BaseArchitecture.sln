@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Web.AP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Application.Contracts", "src\Libraries\SHJ.BaseArchitecture.Application.Contracts\SHJ.BaseArchitecture.Application.Contracts.csproj", "{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Domain.Test", "test\SHJ.BaseArchitecture.Domain.Test\SHJ.BaseArchitecture.Domain.Test.csproj", "{61CE367A-128C-433A-83DB-C4645D91B798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Domain.Test", "test\SHJ.BaseArchitecture.Domain.Test\SHJ.BaseArchitecture.Domain.Test.csproj", "{61CE367A-128C-433A-83DB-C4645D91B798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Application.Test", "test\SHJ.BaseArchitecture.Application.Test\SHJ.BaseArchitecture.Application.Test.csproj", "{6F3423F1-C583-47FC-9CD4-EB3094904BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Application.Test", "test\SHJ.BaseArchitecture.Application.Test\SHJ.BaseArchitecture.Application.Test.csproj", "{6F3423F1-C583-47FC-9CD4-EB3094904BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Shared", "src\Libraries\SHJ.BaseArchitecture.Shared\SHJ.BaseArchitecture.Shared.csproj", "{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{6F3423F1-C583-47FC-9CD4-EB3094904BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F3423F1-C583-47FC-9CD4-EB3094904BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F3423F1-C583-47FC-9CD4-EB3094904BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{8298E61C-7DD9-46AD-9D0C-B8F443D5B8B3} = {7DBFCA99-7EDB-4D92-99BE-D8450DCB285A}
 		{61CE367A-128C-433A-83DB-C4645D91B798} = {F27D69D8-5B7E-4223-91E2-2EAF61F19129}
 		{6F3423F1-C583-47FC-9CD4-EB3094904BDA} = {F27D69D8-5B7E-4223-91E2-2EAF61F19129}
+		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC} = {7DBFCA99-7EDB-4D92-99BE-D8450DCB285A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CEF2DE5-2767-485E-B3DD-C459E484D124}

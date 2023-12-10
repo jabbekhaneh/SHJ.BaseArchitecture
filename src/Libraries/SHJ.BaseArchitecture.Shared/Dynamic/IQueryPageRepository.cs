@@ -1,6 +1,7 @@
-﻿using SHJ.BaseFramework.Repository;
+﻿using SHJ.BaseArchitecture.Domain.Dynamic;
+using SHJ.BaseFramework.Repository;
 
-namespace SHJ.BaseArchitecture.Domain.Dynamic.Repositories;
+namespace SHJ.BaseArchitecture.Shared.Dynamic;
 
 public interface IQueryPageRepository : BaseQueryRepository<Page>
 {

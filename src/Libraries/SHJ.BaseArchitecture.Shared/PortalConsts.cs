@@ -1,4 +1,4 @@
-﻿namespace SHJ.BaseArchitecture.Domain;
+﻿namespace SHJ.BaseArchitecture.Shared;
 
 public static class PortalConsts
 {

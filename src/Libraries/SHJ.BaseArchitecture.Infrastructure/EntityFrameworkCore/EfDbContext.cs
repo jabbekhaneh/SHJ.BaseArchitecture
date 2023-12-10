@@ -13,7 +13,6 @@ public class EfDbContext : DbContext
     private IOptions<BaseOptions> Options;
     private BaseClaimService ClaimService;
     //public EfDbContext() { }
-    
     public EfDbContext(DbContextOptions<EfDbContext> options, BaseClaimService claimService, IOptions<BaseOptions> baseOptions) : base(options)
     {
         ClaimService = claimService;
@@ -28,7 +27,7 @@ public class EfDbContext : DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (Options.Value.UseInMemoryDatabase)
+        if (Options.Value.DatabaseType==DatabaseType.InMemory)
         {
             optionsBuilder.UseInMemoryDatabase("dbInMemory");
             optionsBuilder.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
@@ -37,10 +36,8 @@ public class EfDbContext : DbContext
         {
             optionsBuilder.UseSqlServer(Options.Value.ConnectionString);
         }
-
         base.OnConfiguring(optionsBuilder);
     }
-
 
     public new async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {

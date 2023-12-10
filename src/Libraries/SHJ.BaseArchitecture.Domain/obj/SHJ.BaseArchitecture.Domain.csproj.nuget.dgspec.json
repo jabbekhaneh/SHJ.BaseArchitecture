@@ -49,14 +49,6 @@
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
               "version": "[1.0.4, )"
-            },
-            "SHJ.BaseFramework.Repository": {
-              "target": "Package",
-              "version": "[1.0.4, )"
-            },
-            "SHJ.ExceptionHandler": {
-              "target": "Package",
-              "version": "[1.0.0, )"
             }
           },
           "imports": [

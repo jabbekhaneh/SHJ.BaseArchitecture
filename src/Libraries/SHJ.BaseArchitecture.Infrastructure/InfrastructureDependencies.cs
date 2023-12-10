@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SHJ.BaseArchitecture.Domain.Dynamic;
-using SHJ.BaseArchitecture.Domain.Dynamic.Repositories;
 using SHJ.BaseArchitecture.Infrastructure.Dynamic;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
+using SHJ.BaseArchitecture.Shared.Dynamic;
 using SHJ.BaseFramework.EntityFrameworkCore;
 using SHJ.BaseFramework.Repository;
 
@@ -29,7 +28,6 @@ public static class InfrastructureDependencies
 
     private static IServiceCollection BuildPages(this IServiceCollection services)
     {
-        services.AddScoped<PageManager, PageManager>();
         services.AddScoped<IQueryPageRepository, DapperPageRepository>();
         services.AddScoped<ICommandPageRepository, EFPageRepository>();
         services.AddScoped<IPageRepository, PageRepository>();

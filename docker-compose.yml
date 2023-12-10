@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  shj.basearchitecture.domain.test:
+    image: ${DOCKER_REGISTRY-}shjbasearchitecturedomaintest
+    build:
+      context: .
+      dockerfile: test/SHJ.BaseArchitecture.Domain.Test/Dockerfile

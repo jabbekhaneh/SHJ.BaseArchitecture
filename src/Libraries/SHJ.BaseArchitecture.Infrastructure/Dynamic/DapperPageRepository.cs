@@ -1,10 +1,9 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Options;
 using SHJ.BaseArchitecture.Domain.Dynamic;
-using SHJ.BaseArchitecture.Domain.Dynamic.Repositories;
+using SHJ.BaseArchitecture.Shared.Dynamic;
 using SHJ.BaseFramework.Dapper;
 using SHJ.BaseFramework.Shared;
-using System.Xml.Linq;
 
 namespace SHJ.BaseArchitecture.Infrastructure.Dynamic;
 public class DapperPageRepository : BaseDapperSqlServerData<Page>, IQueryPageRepository

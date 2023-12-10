@@ -9,4 +9,5 @@ public class Page : BaseEntity
     {
         this.Title = title.Trim().ToLower();
     }
+
 }

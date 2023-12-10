@@ -1,9 +1,4 @@
-﻿using SHJ.BaseArchitecture.Domain.Dynamic.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SHJ.BaseArchitecture.Shared.Dynamic;
 
 namespace SHJ.BaseArchitecture.Infrastructure.Dynamic;
 
