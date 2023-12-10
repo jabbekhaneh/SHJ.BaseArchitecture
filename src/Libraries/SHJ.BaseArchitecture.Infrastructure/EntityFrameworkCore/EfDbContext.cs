@@ -29,10 +29,13 @@ public class EfDbContext : DbContext
     {
         if (Options.Value.DatabaseType==DatabaseType.InMemory)
         {
-            optionsBuilder.UseInMemoryDatabase("dbInMemory");
+            optionsBuilder.UseInMemoryDatabase(Options.Value.InMemoryDatabaseConnection);
             optionsBuilder.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
         }
-        else
+        else if(Options.Value.DatabaseType == DatabaseType.TestContainer)
+        {
+            optionsBuilder.UseSqlServer(Options.Value.ConnectionStringTestContainer);
+        }else
         {
             optionsBuilder.UseSqlServer(Options.Value.ConnectionString);
         }

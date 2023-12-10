@@ -1,5 +1,5 @@
 ﻿using SHJ.BaseArchitecture.Application;
-
+using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
 
 namespace SHJ.BaseArchitecture.Web.API;
 
@@ -9,7 +9,7 @@ public static class HostExtentions
     {
         builder.Services.BuildApplication();
         //var options = builder.Configuration.GetValueBaseOptions();
-         
+
         builder.Services.AddCors(option => option.AddPolicy("EnableCorse", builder =>
         {
             builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build();
@@ -22,7 +22,8 @@ public static class HostExtentions
 
     public static WebApplication ConfigurePipeline(this WebApplication app)
     {
-        
+        app.UseApplication();
+
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -31,12 +32,12 @@ public static class HostExtentions
 
         var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 
-        //using (var scope = scopeFactory.CreateScope())
-        //{
-        //    var dbInitializer = scope.ServiceProvider.GetService<ISeadData>();
-        //    dbInitializer.Initialize();
-        //    dbInitializer.SeedData();
-        //}
+        using (var scope = scopeFactory.CreateScope())
+        {
+            var dbInitializer = scope.ServiceProvider.GetService<ISeadData>();
+            dbInitializer.Initialize();
+            dbInitializer.SeedData();
+        }
 
         app.UseHttpsRedirection();
 
