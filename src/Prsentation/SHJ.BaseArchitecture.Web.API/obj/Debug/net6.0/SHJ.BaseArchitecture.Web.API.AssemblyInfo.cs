@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("fe3401ca-d88a-4128-a7fe-1fa6577a7a79")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SHJ.BaseArchitecture.Web.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

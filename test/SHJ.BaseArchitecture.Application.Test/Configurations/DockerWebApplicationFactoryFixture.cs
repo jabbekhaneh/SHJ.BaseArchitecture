@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 using SHJ.BaseFramework.AspNet;
+using SHJ.ExceptionHandler;
 using Testcontainers.MsSql;
 
 namespace SHJ.BaseArchitecture.Application.Test.Configurations;
@@ -21,16 +18,15 @@ public class DockerWebApplicationFactoryFixture : WebApplicationFactory<Program>
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         var connectionString = _dbContainer.GetConnectionString();
-
         base.ConfigureWebHost(builder);
         builder.ConfigureAppConfiguration(app =>
         {
 
 
         });
+
         builder.ConfigureTestServices(services =>
         {
-            //services.RemoveAll(typeof(DbContextOptions<EfDbContext>));
             services.AddSHJBaseFrameworkAspNet(option =>
             {
                 option.ConnectionStringTestContainer = connectionString;
@@ -38,6 +34,7 @@ public class DockerWebApplicationFactoryFixture : WebApplicationFactory<Program>
             });
 
         });
+       
     }
 
 
@@ -49,3 +46,5 @@ public class DockerWebApplicationFactoryFixture : WebApplicationFactory<Program>
         await _dbContainer.StopAsync();
     }
 }
+
+

@@ -1,8 +1,27 @@
 version: '3.4'
 
 services:
-  shj.basearchitecture.domain.test:
-    image: ${DOCKER_REGISTRY-}shjbasearchitecturedomaintest
+  dbPortal:
+    container_name: dbPortalContainer
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 8002:1433
+    environment:
+      - ACCEPT_EULA =Y
+      - SA_PASSWORD =Aa@123456
+      
+
+  shj.basearchitecture.web.api:
+    container_name: "basearchitecture"
+    image: ${DOCKER_REGISTRY-}shjbasearchitecturewebapi
     build:
       context: .
-      dockerfile: test/SHJ.BaseArchitecture.Domain.Test/Dockerfile
+      dockerfile: src/Prsentation/SHJ.BaseArchitecture.Web.API/Dockerfile
+    ports:
+      - 8001:80
+    depends_on:
+      - dbPortal
+    environment:
+      - DB_HOST=.
+      - DB_NAME=dbPortal
+      - DB_SA_PASSWORD=Aa@123456

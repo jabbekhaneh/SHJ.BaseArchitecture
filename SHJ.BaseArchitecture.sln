@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Application.Test", "test\SHJ.BaseArchitecture.Application.Test\SHJ.BaseArchitecture.Application.Test.csproj", "{6F3423F1-C583-47FC-9CD4-EB3094904BDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHJ.BaseArchitecture.Shared", "src\Libraries\SHJ.BaseArchitecture.Shared\SHJ.BaseArchitecture.Shared.csproj", "{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHJ.BaseArchitecture.Shared", "src\Libraries\SHJ.BaseArchitecture.Shared\SHJ.BaseArchitecture.Shared.csproj", "{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{13F5E2FF-E107-4156-AC76-BC9BC1EA5A7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53E22C6D-9F1F-4949-97BD-20DA409CA6FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F5E2FF-E107-4156-AC76-BC9BC1EA5A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F5E2FF-E107-4156-AC76-BC9BC1EA5A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F5E2FF-E107-4156-AC76-BC9BC1EA5A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F5E2FF-E107-4156-AC76-BC9BC1EA5A7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

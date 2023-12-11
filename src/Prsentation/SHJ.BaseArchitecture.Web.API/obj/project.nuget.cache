@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UEpVPYtkU2EYzOYrPBRktwfD7oEPTqF9hL0NyTnoZKlzYkwpT4ekiX41m0XFTI7hQo4QLyicy+GL9ELmJMW6NQ==",
+  "dgSpecHash": "zvGx4Xwe7LsJApdKxIAjMOVGa0J3Z5gWVslybIgLinXqbNe2KEfX7cPhVwzQOFozizhuhAe4ycof9OolqbIvPw==",
   "success": true,
   "projectFilePath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Prsentation\\SHJ.BaseArchitecture.Web.API\\SHJ.BaseArchitecture.Web.API.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,7 @@
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

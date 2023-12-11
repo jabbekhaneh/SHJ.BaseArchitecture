@@ -1,5 +1,6 @@
 ﻿using SHJ.BaseArchitecture.Application;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
+using SHJ.BaseFramework.AspNet.Mvc;
 
 namespace SHJ.BaseArchitecture.Web.API;
 
@@ -7,8 +8,8 @@ public static class HostExtentions
 {
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
-        builder.Services.BuildApplication();
-        //var options = builder.Configuration.GetValueBaseOptions();
+        var options = builder.Configuration.GetValueBaseOptions();
+        builder.Services.BuildApplication(options.DatabaseName);
 
         builder.Services.AddCors(option => option.AddPolicy("EnableCorse", builder =>
         {

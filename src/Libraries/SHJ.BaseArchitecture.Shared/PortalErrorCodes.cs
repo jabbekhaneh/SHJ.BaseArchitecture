@@ -1,4 +1,6 @@
-﻿namespace SHJ.BaseArchitecture.Shared;
+﻿using System.Net;
+
+namespace SHJ.BaseArchitecture.Shared;
 
 public enum PortalErrorCodes : int
 {

@@ -13,3 +13,4 @@ public abstract class BaseApplicationTest : IClassFixture<DockerWebApplicationFa
     }
 
 }
+
