@@ -8,8 +8,12 @@ public static class HostExtentions
 {
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
-        var options = builder.Configuration.GetValueBaseOptions();
-        builder.Services.BuildApplication(options.DatabaseName);
+        //var options = builder.Configuration.GetValueBaseOptions();
+        var databaseName = Environment.GetEnvironmentVariable("");
+        
+        builder.Services.BuildApplication(databaseName);
+
+        
 
         builder.Services.AddCors(option => option.AddPolicy("EnableCorse", builder =>
         {

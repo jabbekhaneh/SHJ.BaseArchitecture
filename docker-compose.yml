@@ -1,11 +1,13 @@
 version: '3.4'
 
 services:
+
   dbPortal:
     container_name: dbPortalContainer
     image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: always
     ports:
-      - 8002:1433
+      - 1433:1433
     environment:
       - ACCEPT_EULA =Y
       - SA_PASSWORD =Aa@123456
@@ -22,6 +24,7 @@ services:
     depends_on:
       - dbPortal
     environment:
-      - DB_HOST=.
-      - DB_NAME=dbPortal
-      - DB_SA_PASSWORD=Aa@123456
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "DatabaseName=dbPortal"
+      - "DataSource=dbPortal"
+      - "DB_Password=Aa@123456"
