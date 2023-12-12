@@ -1,6 +1,6 @@
 ﻿using SHJ.BaseArchitecture.Application;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
-using SHJ.BaseFramework.AspNet.Mvc;
+using SHJ.BaseFramework.AspNet;
 
 namespace SHJ.BaseArchitecture.Web.API;
 
@@ -9,11 +9,16 @@ public static class HostExtentions
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         //var options = builder.Configuration.GetValueBaseOptions();
-        var databaseName = Environment.GetEnvironmentVariable("");
-        
-        builder.Services.BuildApplication(databaseName);
+        //var databaseName = Environment.GetEnvironmentVariable("");
 
-        
+        builder.Services.BuildApplication();
+        var connection = "Data Source=dbPortal; Initial Catalog=db_Portal; User ID=sa; Password=Aa@123456";
+        builder.Services.AddSHJBaseFrameworkAspNet(option =>
+        {
+            option.DatabaseType = BaseFramework.Shared.DatabaseType.DbTest;
+            option.DefualtConnectionString = connection;
+
+        });
 
         builder.Services.AddCors(option => option.AddPolicy("EnableCorse", builder =>
         {
@@ -28,7 +33,7 @@ public static class HostExtentions
     public static WebApplication ConfigurePipeline(this WebApplication app)
     {
         app.UseApplication();
-
+        app.UseSHJBaseFrameworkAspNet();
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();

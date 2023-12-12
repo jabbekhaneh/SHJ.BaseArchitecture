@@ -29,8 +29,8 @@ public class DockerWebApplicationFactoryFixture : WebApplicationFactory<Program>
         {
             services.AddSHJBaseFrameworkAspNet(option =>
             {
-                option.ConnectionStringTestContainer = connectionString;
-                option.DatabaseType = BaseFramework.Shared.DatabaseType.TestContainer;
+                option.DefualtConnectionString = connectionString;
+                option.DatabaseType = BaseFramework.Shared.DatabaseType.DbTest;
             });
 
         });

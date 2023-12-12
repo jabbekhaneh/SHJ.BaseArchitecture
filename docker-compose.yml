@@ -1,30 +1,36 @@
 version: '3.4'
 
+networks:
+  networkPortal:
+
+###############
+
 services:
-
+#-----------------------------------------------------------------------
   dbPortal:
-    container_name: dbPortalContainer
+    container_name: dbPortal
     image: mcr.microsoft.com/mssql/server:2019-latest
-    restart: always
-    ports:
-      - 1433:1433
     environment:
-      - ACCEPT_EULA =Y
-      - SA_PASSWORD =Aa@123456
-      
-
+      - MSSQL_SA_PASSWORD=Aa@123456
+      - ACCEPT_EULA=Y
+    ports:
+      - 8002:1433
+    networks:
+     - networkPortal
+#-----------------------------------------------------------------------
   shj.basearchitecture.web.api:
-    container_name: "basearchitecture"
+    container_name: "shjbasearchitecturewebapi"
     image: ${DOCKER_REGISTRY-}shjbasearchitecturewebapi
     build:
       context: .
       dockerfile: src/Prsentation/SHJ.BaseArchitecture.Web.API/Dockerfile
-    ports:
-      - 8001:80
-    depends_on:
-      - dbPortal
     environment:
       - "ASPNETCORE_ENVIRONMENT=Development"
-      - "DatabaseName=dbPortal"
-      - "DataSource=dbPortal"
-      - "DB_Password=Aa@123456"
+      - "ASPNETCORE_URLS=http://+:80"
+    depends_on:
+      - dbPortal
+    ports:
+      - 8001:80
+    networks:
+     - networkPortal
+#-----------------------------------------------------------------------

@@ -1,3 +1,15 @@
+# How To run solution
+1.Install Docker
+</br>
+2.build
+```
+ docker-compose build
+```
+3.up
+```
+docker-compose up
+```
+
 # Domain Driven Design
 DDD example focus on Core concept of DDD like
 

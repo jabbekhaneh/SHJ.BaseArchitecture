@@ -27,18 +27,20 @@ public class EfDbContext : DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (Options.Value.DatabaseType==DatabaseType.InMemory)
+        if (Options.Value.DatabaseType == DatabaseType.InMemory)
         {
             optionsBuilder.UseInMemoryDatabase(Options.Value.InMemoryDatabaseConnection);
             optionsBuilder.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
         }
-        else if(Options.Value.DatabaseType == DatabaseType.TestContainer)
+        else if (Options.Value.DatabaseType == DatabaseType.DbTest)
         {
-            optionsBuilder.UseSqlServer(Options.Value.ConnectionStringTestContainer);
-        }else
+            optionsBuilder.UseSqlServer(Options.Value.DefualtConnectionString);
+        }
+        else if (Options.Value.DatabaseType == DatabaseType.MsSql)
         {
             optionsBuilder.UseSqlServer(Options.Value.ConnectionString);
         }
+
         base.OnConfiguring(optionsBuilder);
     }
 

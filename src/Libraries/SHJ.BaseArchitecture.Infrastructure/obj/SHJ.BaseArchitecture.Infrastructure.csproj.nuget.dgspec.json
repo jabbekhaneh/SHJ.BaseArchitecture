@@ -48,7 +48,7 @@
           "dependencies": {
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[1.0.5, )"
             }
           },
           "imports": [
@@ -119,11 +119,11 @@
           "dependencies": {
             "SHJ.BaseFramework.Dapper": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[1.0.5, )"
             },
             "SHJ.BaseFramework.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[1.0.5, )"
             }
           },
           "imports": [
@@ -194,7 +194,7 @@
           "dependencies": {
             "SHJ.BaseFramework.Repository": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[1.0.5, )"
             }
           },
           "imports": [
