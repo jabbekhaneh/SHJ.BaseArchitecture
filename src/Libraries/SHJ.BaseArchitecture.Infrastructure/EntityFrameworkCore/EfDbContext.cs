@@ -19,7 +19,6 @@ public class EfDbContext : DbContext
         Options = baseOptions;
     }
     public virtual DbSet<Page> Pages { get; set; }
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
@@ -29,19 +28,23 @@ public class EfDbContext : DbContext
     {
         if (Options.Value.DatabaseType == DatabaseType.InMemory)
         {
-            optionsBuilder.UseInMemoryDatabase(Options.Value.InMemoryDatabaseConnection);
+            optionsBuilder.UseInMemoryDatabase("App.Db");
             optionsBuilder.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
-        }
-        else if (Options.Value.DatabaseType == DatabaseType.DbTest)
-        {
-            optionsBuilder.UseSqlServer(Options.Value.DefualtConnectionString);
         }
         else if (Options.Value.DatabaseType == DatabaseType.MsSql)
         {
-            optionsBuilder.UseSqlServer(Options.Value.ConnectionString);
+            string connectionString = SetConnectionString();
+            optionsBuilder.UseSqlServer(connectionString);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(connectionString);
         }
 
         base.OnConfiguring(optionsBuilder);
+    }
+
+    private string SetConnectionString()
+    {
+        return $@"Data Source={Options.Value.SqlOptions.DataSource};Initial Catalog={Options.Value.SqlOptions.DatabaseName};Persist Security Info=True;MultipleActiveResultSets=True;User ID={Options.Value.SqlOptions.UserID};Password={Options.Value.SqlOptions.Password}";
     }
 
     public new async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
@@ -62,4 +65,9 @@ public class EfDbContext : DbContext
 
         return await base.SaveChangesAsync(cancellationToken);
     }
+
+    
+      
+        
+    
 }

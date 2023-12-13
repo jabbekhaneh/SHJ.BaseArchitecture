@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "SHJ.BaseFramework.Domain/1.0.5": {
+      "SHJ.BaseFramework.Domain/1.0.9": {
         "type": "package",
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
@@ -14,23 +14,23 @@
     }
   },
   "libraries": {
-    "SHJ.BaseFramework.Domain/1.0.5": {
-      "sha512": "r/DPFPnT9c1Lt5vqSs4Kd2LwD+nRFRIB8D0B8hRKGpVoHLw0ycfLyj5WwJSXKca2M4IPIx4J4XHOqjDMwxtIMw==",
+    "SHJ.BaseFramework.Domain/1.0.9": {
+      "sha512": "/BRZv7apE8oOKV3aPkgFsirk7Y77pMSXK1296NKiptu7zns6FhJwNu19AfpbgDltJPrUEj7I41B7jYuCBsdibw==",
       "type": "package",
-      "path": "shj.baseframework.domain/1.0.5",
+      "path": "shj.baseframework.domain/1.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Domain.dll",
         "logo.png",
-        "shj.baseframework.domain.1.0.5.nupkg.sha512",
+        "shj.baseframework.domain.1.0.9.nupkg.sha512",
         "shj.baseframework.domain.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "SHJ.BaseFramework.Domain >= 1.0.5"
+      "SHJ.BaseFramework.Domain >= 1.0.9"
     ]
   },
   "packageFolders": {
@@ -81,7 +81,7 @@
         "dependencies": {
           "SHJ.BaseFramework.Domain": {
             "target": "Package",
-            "version": "[1.0.5, )"
+            "version": "[1.0.9, )"
           }
         },
         "imports": [

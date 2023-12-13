@@ -117,7 +117,7 @@
           "dependencies": {
             "SHJ.BaseFramework.AspNet": {
               "target": "Package",
-              "version": "[1.0.5, )"
+              "version": "[1.0.9, )"
             }
           },
           "imports": [
@@ -184,7 +184,7 @@
           "dependencies": {
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
-              "version": "[1.0.5, )"
+              "version": "[1.0.9, )"
             }
           },
           "imports": [
@@ -255,11 +255,11 @@
           "dependencies": {
             "SHJ.BaseFramework.Dapper": {
               "target": "Package",
-              "version": "[1.0.5, )"
+              "version": "[1.0.9, )"
             },
             "SHJ.BaseFramework.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[1.0.5, )"
+              "version": "[1.0.9, )"
             }
           },
           "imports": [
@@ -330,7 +330,7 @@
           "dependencies": {
             "SHJ.BaseFramework.Repository": {
               "target": "Package",
-              "version": "[1.0.5, )"
+              "version": "[1.0.9, )"
             }
           },
           "imports": [
