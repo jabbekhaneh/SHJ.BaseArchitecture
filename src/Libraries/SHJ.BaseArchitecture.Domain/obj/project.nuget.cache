@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gKrkU961ORtPYS0whyUlZ5KDRbOpBCH1FU4+fjfsd3NwNpz4Vyl+aDILUobW1/EIDoX241LIP3CMzrWRe7hzHQ==",
+  "dgSpecHash": "3BTbcKf6zug3Zuvjn20ordfpP0YaCy3q5dv+WVlJ3D6sh4Amf2/sVeOdRBxVKqhCBmtjeJ8Xpbr6yOR4lZ6Heg==",
   "success": true,
   "projectFilePath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Domain\\SHJ.BaseArchitecture.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\shj.baseframework.domain\\1.0.9\\shj.baseframework.domain.1.0.9.nupkg.sha512"
+    "C:\\Users\\Jabbekhaneh\\.nuget\\packages\\shj.baseframework.domain\\1.0.11\\shj.baseframework.domain.1.0.11.nupkg.sha512"
   ],
   "logs": []
 }

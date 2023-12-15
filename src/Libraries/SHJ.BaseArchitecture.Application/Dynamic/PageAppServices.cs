@@ -13,10 +13,11 @@ namespace SHJ.BaseArchitecture.Application.Dynamic;
 
 
 [ControllerName("Page")]
-public class PageAppServices : BaseAppService<Page>, IPageAppServices 
+public class PageAppServices : BaseAppService<Page>, IPageAppServices
 {
     private readonly IPageRepository _repository;
     private readonly BaseCommandUnitOfWork _unitOfWork;
+
     public PageAppServices(IPageRepository repository, BaseCommandUnitOfWork unitOfWork)
     {
         _repository = repository;
@@ -27,7 +28,7 @@ public class PageAppServices : BaseAppService<Page>, IPageAppServices
     public async Task Create(CreatePageDto input)
     {
         if (await _repository.Query.IsExistByTitleAsync(input.Title.ToLower()))
-            throw new BaseException((int)PortalErrorCodes.DublicatePageTitle);
+            throw new BaseBusinessException(GlobalErrorCodes.DublicatePageTitle);
 
         var newPage = new Page(input.Title);
         await _repository.Command.InsertAsync(newPage);
@@ -35,3 +36,5 @@ public class PageAppServices : BaseAppService<Page>, IPageAppServices
         _unitOfWork.Commit();
     }
 }
+
+

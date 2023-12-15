@@ -1,17 +1,20 @@
 ﻿using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
-using SHJ.BaseArchitecture.Application.Test.Configurations;
-using SHJ.BaseArchitecture.Shared;
-using SHJ.ExceptionHandler;
+using SHJ.BaseArchitecture.Application.Test.Fixtures;
+using SHJ.ExceptionHandler.http;
+using System.Net.Http.Json;
 
 namespace SHJ.BaseArchitecture.Application.Test.Dynamic;
 
-public class PageAppServicesTest : BaseApplicationTest
+public class PageAppServicesTest : BaseControllerTests
 {
 
-    public PageAppServicesTest(DockerWebApplicationFactoryFixture factory) : base(factory)
+    public PageAppServicesTest(IntegrationContainersAppFactory factory) : base(factory)
     {
 
     }
+
+
+    public readonly static string CreatePageUrl = "/api/Page";
 
     [Fact]
     public async Task Create_Page_Should_Response_OK()
@@ -23,11 +26,10 @@ public class PageAppServicesTest : BaseApplicationTest
         };
 
         //act
-        var request = await _client.PostAsync(DynamicHelpers.Urls.CreatePage,
-            HttpHelper.GetJsonHttpContent(page));
+        var response = await RequestHttp.PostAsync(CreatePageUrl, HttpHelper.GetJsonHttpContent(page));
 
         //assert
-        request.StatusCode.Should().Be(HttpStatusCode.OK);
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
 
     }
     [Fact]
@@ -38,17 +40,13 @@ public class PageAppServicesTest : BaseApplicationTest
         {
             Title = "Test_Title2",
         };
-        await _client.PostAsync(DynamicHelpers.Urls.CreatePage,
-           HttpHelper.GetJsonHttpContent(page));
+        await RequestHttp.PostAsync(CreatePageUrl,HttpHelper.GetJsonHttpContent(page));
 
 
         //act
-        var response =await _client.PostAsync(DynamicHelpers.Urls.CreatePage,
-          HttpHelper.GetJsonHttpContent(page));
+        var response = await RequestHttp.PostAsync(CreatePageUrl,HttpHelper.GetJsonHttpContent(page));
 
         //assert
-
-        var statusCode = (int)response.StatusCode;
-        statusCode.Should().Be((int)PortalErrorCodes.DublicatePageTitle);
+        response.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
     }
 }

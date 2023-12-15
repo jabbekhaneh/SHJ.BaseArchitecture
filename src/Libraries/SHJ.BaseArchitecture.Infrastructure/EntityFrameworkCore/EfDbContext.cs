@@ -38,6 +38,12 @@ public class EfDbContext : DbContext
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(connectionString);
         }
+        else if (Options.Value.DatabaseType == DatabaseType.Manual)
+        {
+            optionsBuilder.UseSqlServer(Options.Value.ManualConnectionString);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            
+        }
 
         base.OnConfiguring(optionsBuilder);
     }

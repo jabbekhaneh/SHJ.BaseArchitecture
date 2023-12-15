@@ -1,6 +1,5 @@
 version: '3.4'
 
-
 ####### Networks #######
 
 networks:
@@ -10,8 +9,8 @@ networks:
 
 services:
 #-----------------------------------------------------------------------
-  dbPortal:
-    container_name: dbPortal
+  MsSqLServer2019:
+    container_name: MsSqLServer2019
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       - MSSQL_SA_PASSWORD=Aa@123456
@@ -22,8 +21,8 @@ services:
      - networkPortal
 #-----------------------------------------------------------------------
   shj.basearchitecture.web.api:
-    container_name: "shjbasearchitecturewebapi"
-    image: ${DOCKER_REGISTRY-}shjbasearchitecturewebapi
+    container_name: "base_application"
+    image: ${DOCKER_REGISTRY-}base_application
     build:
       context: .
       dockerfile: src/Prsentation/SHJ.BaseArchitecture.Web.API/Dockerfile
@@ -31,7 +30,7 @@ services:
       - "ASPNETCORE_ENVIRONMENT=Development"
       - "ASPNETCORE_URLS=http://+:80"
     depends_on:
-      - dbPortal
+      - MsSqLServer2019
     ports:
       - 8001:80
     networks:
