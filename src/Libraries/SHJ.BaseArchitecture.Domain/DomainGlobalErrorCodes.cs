@@ -2,5 +2,7 @@
 
 public static class DomainGlobalErrorCodes
 {
-    public const string DublicatePageTitle = "SHJ-9001";
+    public static string DublicatePageTitle = "SHJ-5001";
+
+    public static string NotFoundPage = "SHJ-5002";
 }

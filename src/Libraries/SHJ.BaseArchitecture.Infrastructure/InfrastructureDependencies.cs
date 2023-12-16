@@ -30,9 +30,12 @@ public static class InfrastructureDependencies
     private static IServiceCollection BuildPages(this IServiceCollection services)
     {
         services.AddScoped<PageManager, PageManager>();
-        services.AddScoped<IPageDapperQueryRepository, DapperPageRepository>();
-        services.AddScoped<ICommandPageRepository, PageEFCommandRepository>();
-        services.AddScoped<IPageRepository, PageRepository>();
+        //services.AddScoped<IPageDapperQueryRepository, DapperPageRepository>();
+        //services.AddScoped<ICommandPageRepository, PageEFCommandRepository>();
+        //services.AddScoped<IQueryPageRepository, PageEFQueryRepository>();
+        //services.AddScoped<IPageRepository, PageRepository>();
+        services.AddScoped<IBaseCommandRepository<Page>, PageEFCommandRepository>();
+        services.AddScoped<IBaseQueryableRepository<Page>, PageEFQueryRepository>();
         return services;
     }
 }
