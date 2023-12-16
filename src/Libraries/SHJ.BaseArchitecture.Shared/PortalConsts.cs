@@ -2,7 +2,7 @@
 
 public static class PortalConsts
 {
-    public const string ServerName = "SHJ-PORTAL";
+    public const string ServerName = "SHJ-PORTAL-500";
 
     public const int DefualtMaxLenght = 256;
 

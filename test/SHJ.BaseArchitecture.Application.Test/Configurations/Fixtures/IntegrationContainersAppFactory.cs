@@ -1,19 +1,19 @@
-﻿using Dapper;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using SHJ.BaseArchitecture.Application.Test.Configurations.Fakes;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 using SHJ.BaseFramework.AspNet;
+using SHJ.BaseFramework.AspNet.Mvc;
 using SHJ.BaseFramework.Shared;
+using System.Data;
 
-namespace SHJ.BaseArchitecture.Application.Test.Fixtures;
+namespace SHJ.BaseArchitecture.Application.Test.Configurations.Fixtures;
 
-public class IntegrationContainersAppFactory : WebApplicationFactory<Program> , IAsyncLifetime
+public class IntegrationContainersAppFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
-    private MssqlContainerFixture SqlContainerFixture { get; }
-  
+    public MssqlContainerFixture SqlContainerFixture { get; }
     public IntegrationContainersAppFactory()
     {
         SqlContainerFixture = new MssqlContainerFixture();
@@ -27,7 +27,7 @@ public class IntegrationContainersAppFactory : WebApplicationFactory<Program> , 
         {
 
         });
-
+        
         builder.ConfigureTestServices(services =>
         {
             var serviceProvider = services.BuildServiceProvider();
@@ -36,9 +36,9 @@ public class IntegrationContainersAppFactory : WebApplicationFactory<Program> , 
                 option.DatabaseType = DatabaseType.Manual;
                 option.Environment = ASPNET_EnvironmentType.Development;
                 option.ManualConnectionString = SqlContainerFixture.GetConnectionString();
-                
-            });
 
+            });
+            services.AddScoped<BaseClaimService, FakeClaimService>();
         });
     }
 
@@ -52,6 +52,6 @@ public class IntegrationContainersAppFactory : WebApplicationFactory<Program> , 
         await SqlContainerFixture.Container.StopAsync();
     }
 
-
+    
 
 }

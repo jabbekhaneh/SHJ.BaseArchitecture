@@ -6,7 +6,7 @@ using SHJ.BaseFramework.Dapper;
 using SHJ.BaseFramework.Shared;
 
 namespace SHJ.BaseArchitecture.Infrastructure.Dynamic;
-public class DapperPageRepository : BaseDapperSqlServerData<Page>, IQueryPageRepository
+public class DapperPageRepository : BaseQueryDapperSqlServerData<Page>, IPageDapperQueryRepository
 {
     public DapperPageRepository(IOptions<BaseOptions> options) : base(options)
     {

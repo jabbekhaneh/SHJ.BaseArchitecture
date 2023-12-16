@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SHJ.BaseArchitecture.Domain.Dynamic;
 using SHJ.BaseArchitecture.Infrastructure.Dynamic;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
@@ -21,15 +22,16 @@ public static class InfrastructureDependencies
     private static IServiceCollection BuildEntityframework(this IServiceCollection services)
     {
         services.AddDbContext<EfDbContext>();
-        services.AddTransient<BaseCommandUnitOfWork, BaseEFUnitOfWork<EfDbContext>>();
+        services.AddTransient<IBaseCommandUnitOfWork, BaseEFUnitOfWork<EfDbContext>>();
         services.AddScoped<ISeadData, SeadData>();
         return services;
     }
 
     private static IServiceCollection BuildPages(this IServiceCollection services)
     {
-        services.AddScoped<IQueryPageRepository, DapperPageRepository>();
-        services.AddScoped<ICommandPageRepository, EFPageRepository>();
+        services.AddScoped<PageManager, PageManager>();
+        services.AddScoped<IPageDapperQueryRepository, DapperPageRepository>();
+        services.AddScoped<ICommandPageRepository, PageEFCommandRepository>();
         services.AddScoped<IPageRepository, PageRepository>();
         return services;
     }

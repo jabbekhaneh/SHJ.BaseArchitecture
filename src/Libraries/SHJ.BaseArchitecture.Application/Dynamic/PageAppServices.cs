@@ -15,25 +15,26 @@ namespace SHJ.BaseArchitecture.Application.Dynamic;
 [ControllerName("Page")]
 public class PageAppServices : BaseAppService<Page>, IPageAppServices
 {
-    private readonly IPageRepository _repository;
-    private readonly BaseCommandUnitOfWork _unitOfWork;
 
-    public PageAppServices(IPageRepository repository, BaseCommandUnitOfWork unitOfWork)
+    private readonly IBaseCommandUnitOfWork _unitOfWork;
+    private readonly PageManager _manager;
+    public PageAppServices(IBaseCommandUnitOfWork unitOfWork, PageManager manager)
     {
-        _repository = repository;
         _unitOfWork = unitOfWork;
+        _manager = manager;
     }
 
     [HttpPost]
     public async Task Create(CreatePageDto input)
     {
-        if (await _repository.Query.IsExistByTitleAsync(input.Title.ToLower()))
-            throw new BaseBusinessException(GlobalErrorCodes.DublicatePageTitle);
-
-        var newPage = new Page(input.Title);
-        await _repository.Command.InsertAsync(newPage);
-
+        await _manager.Insert(input.Title);
         _unitOfWork.Commit();
+    }
+
+    [HttpGet]
+    public async Task<GetPageByIdDto> GetById(Guid id)
+    {
+        return new GetPageByIdDto();
     }
 }
 

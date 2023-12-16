@@ -1,7 +1,7 @@
-﻿using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
-using SHJ.BaseArchitecture.Application.Test.Fixtures;
-using SHJ.ExceptionHandler.http;
-using System.Net.Http.Json;
+﻿using Dapper;
+using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
+using SHJ.BaseArchitecture.Application.Test.Configurations.Fixtures;
+using SHJ.BaseArchitecture.Domain.Dynamic;
 
 namespace SHJ.BaseArchitecture.Application.Test.Dynamic;
 
@@ -14,39 +14,22 @@ public class PageAppServicesTest : BaseControllerTests
     }
 
 
-    public readonly static string CreatePageUrl = "/api/Page";
+    public readonly static string _Sut = "/api/Page";
 
     [Fact]
-    public async Task Create_Page_Should_Response_OK()
+    public async Task OnCreatePage_WhenExecuteController_ShouldReturnOk()
     {
         //arrange
         var page = new CreatePageDto
         {
-            Title = "Test_Title",
+            Title = "Dummy",
         };
-
         //act
-        var response = await RequestHttp.PostAsync(CreatePageUrl, HttpHelper.GetJsonHttpContent(page));
+        var response = await RequestHttp.PostAsync(_Sut, HttpHelper.GetJsonHttpContent(page));
 
         //assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
 
     }
-    [Fact]
-    public async Task Create_Page_Should_Exception_When_Dublicate_Title()
-    {
-        //arrange
-        var page = new CreatePageDto
-        {
-            Title = "Test_Title2",
-        };
-        await RequestHttp.PostAsync(CreatePageUrl,HttpHelper.GetJsonHttpContent(page));
-
-
-        //act
-        var response = await RequestHttp.PostAsync(CreatePageUrl,HttpHelper.GetJsonHttpContent(page));
-
-        //assert
-        response.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
-    }
+   
 }

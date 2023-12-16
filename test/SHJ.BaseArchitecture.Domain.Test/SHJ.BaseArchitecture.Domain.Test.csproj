@@ -30,8 +30,4 @@
 		<ProjectReference Include="..\..\src\Libraries\SHJ.BaseArchitecture.Infrastructure\SHJ.BaseArchitecture.Infrastructure.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Dynamic\" />
-	</ItemGroup>
-
 </Project>

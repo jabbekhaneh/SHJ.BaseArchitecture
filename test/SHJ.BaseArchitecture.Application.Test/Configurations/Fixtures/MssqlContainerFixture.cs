@@ -1,7 +1,7 @@
 ﻿using Testcontainers.MsSql;
-namespace SHJ.BaseArchitecture.Application.Test.Fixtures
+namespace SHJ.BaseArchitecture.Application.Test.Configurations.Fixtures
 {
-    public class MssqlContainerFixture 
+    public class MssqlContainerFixture
     {
         public MsSqlContainer Container { get; }
         public string DataSource { get; } = "localhost\\MsSqLServer2019,8002";
@@ -18,7 +18,7 @@ namespace SHJ.BaseArchitecture.Application.Test.Fixtures
 
         public string GetConnectionString() => Container.GetConnectionString();
 
-        
+
 
     }
 }

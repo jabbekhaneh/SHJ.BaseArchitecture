@@ -8,8 +8,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj" />
-		<PackageReference Include="SHJ.BaseFramework.Repository" Version="1.0.11" />
-		<PackageReference Include="SHJ.ExceptionHandler" Version="1.0.5" />
 	</ItemGroup>
 
 </Project>

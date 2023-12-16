@@ -4,5 +4,6 @@ public interface IPageRepository
 {
     ICommandPageRepository Command { get; }
     IQueryPageRepository Query { get; }
+    IPageDapperQueryRepository Dapper {get;}
 }
 

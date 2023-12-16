@@ -117,7 +117,7 @@
           "dependencies": {
             "SHJ.BaseFramework.AspNet": {
               "target": "Package",
-              "version": "[1.0.11, )"
+              "version": "[1.1.1, )"
             },
             "ServiceStack.Client": {
               "target": "Package",
@@ -188,7 +188,11 @@
           "dependencies": {
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
-              "version": "[1.0.11, )"
+              "version": "[1.1.1, )"
+            },
+            "SHJ.ExceptionHandler": {
+              "target": "Package",
+              "version": "[1.0.5, )"
             }
           },
           "imports": [
@@ -241,6 +245,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Domain\\SHJ.BaseArchitecture.Domain.csproj": {
+                "projectPath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Domain\\SHJ.BaseArchitecture.Domain.csproj"
+              },
               "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Shared\\SHJ.BaseArchitecture.Shared.csproj": {
                 "projectPath": "E:\\mygit\\SHJ.BaseArchitecture\\src\\Libraries\\SHJ.BaseArchitecture.Shared\\SHJ.BaseArchitecture.Shared.csproj"
               }
@@ -259,11 +266,11 @@
           "dependencies": {
             "SHJ.BaseFramework.Dapper": {
               "target": "Package",
-              "version": "[1.0.11, )"
+              "version": "[1.1.1, )"
             },
             "SHJ.BaseFramework.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[1.0.11, )"
+              "version": "[1.1.1, )"
             }
           },
           "imports": [
@@ -331,16 +338,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "SHJ.BaseFramework.Repository": {
-              "target": "Package",
-              "version": "[1.0.11, )"
-            },
-            "SHJ.ExceptionHandler": {
-              "target": "Package",
-              "version": "[1.0.5, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

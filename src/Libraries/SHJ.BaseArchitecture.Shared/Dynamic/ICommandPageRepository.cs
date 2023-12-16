@@ -4,7 +4,7 @@ using SHJ.BaseFramework.Repository;
 namespace SHJ.BaseArchitecture.Shared.Dynamic;
 
 
-public interface ICommandPageRepository : BaseCommandRepository<Page>
+public interface ICommandPageRepository : IBaseCommandRepository<Page>
 {
 
 }

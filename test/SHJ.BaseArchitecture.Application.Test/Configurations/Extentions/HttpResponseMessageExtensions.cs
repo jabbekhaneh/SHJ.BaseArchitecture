@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SHJ.BaseArchitecture.Application.Test.Fixtures.Extentions;
-
+namespace SHJ.BaseArchitecture.Application.Test.Configurations.Extentions;
 public static class HttpResponseMessageExtensions
 {
     public static async Task<T> DeserializeResponseAsync<T>(this Task<HttpResponseMessage> message)
@@ -19,3 +18,4 @@ public static class HttpResponseMessageExtensions
         return JsonConvert.DeserializeObject<T>(stringResult);
     }
 }
+
