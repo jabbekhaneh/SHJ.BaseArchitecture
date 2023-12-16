@@ -1,6 +1,7 @@
 ﻿using SHJ.BaseArchitecture.Domain.Dynamic;
 using SHJ.BaseArchitecture.Infrastructure.Dynamic;
 using SHJ.BaseFramework.Repository;
+using SHJ.ExceptionHandler;
 
 namespace SHJ.BaseArchitecture.Domain.Test.Dynamic;
 
@@ -17,10 +18,36 @@ public class PageManagerTest : DomainTestBase
     }
 
     [Fact]
-    public async Task test()
+    public async Task InsertPage_WhenExecutePageManager_ShouldReturnTheExpecedPage()
     {
-        await _Sut.Insert("HASAN");
+        //arrange
+        string title = "Dummy-Title-One".ToLower();
+
+        //act
+        await _Sut.Insert(title);
         DatabaseInMemory.SaveChanges();
-        DatabaseInMemory.Pages.Any(_ => _.Title == "HASAN");
+
+        //assert
+        DatabaseInMemory.Pages.Any(_ => _.Title == title).Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task InsertPage_WhenExecutePageManager_ShouldExceptionDublicateTitle()
+    {
+        //arrange
+        string title = "Dummy-Title".ToLower();
+        var page = new Page(title);
+        _commandRepository.Insert(page);
+        DatabaseInMemory.SaveChanges();
+
+        //act
+        Func<Task> expected = () => _Sut.Insert(title);
+
+
+        //assert
+        await expected.Should().ThrowAsync<BaseBusinessException>();
+        var exception= await Assert.ThrowsAsync<BaseBusinessException>(expected);
+        exception.Code.Should().Be(DomainGlobalErrorCodes.DublicatePageTitle);
+      
     }
 }
