@@ -1,6 +1,8 @@
-﻿namespace SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
+﻿using SHJ.BaseFramework.DependencyInjection.Contracts;
 
-public interface ISeadData
+namespace SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
+
+public interface ISeadData : IScopedDependency
 {
     void Initialize();
     void SeedData();

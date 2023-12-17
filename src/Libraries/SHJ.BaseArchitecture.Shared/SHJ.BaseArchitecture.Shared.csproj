@@ -6,6 +6,8 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
+
+
 	<ItemGroup>
 		<ProjectReference Include="..\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj" />
 	</ItemGroup>

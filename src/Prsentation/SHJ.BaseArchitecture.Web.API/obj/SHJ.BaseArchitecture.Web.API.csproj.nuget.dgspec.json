@@ -117,7 +117,7 @@
           "dependencies": {
             "SHJ.BaseFramework.AspNet": {
               "target": "Package",
-              "version": "[1.1.1, )"
+              "version": "[1.2.1, )"
             },
             "ServiceStack.Client": {
               "target": "Package",
@@ -186,9 +186,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "SHJ.BaseFramework.DependencyInjection": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
-              "version": "[1.1.1, )"
+              "version": "[1.2.1, )"
             },
             "SHJ.ExceptionHandler": {
               "target": "Package",
@@ -266,11 +270,11 @@
           "dependencies": {
             "SHJ.BaseFramework.Dapper": {
               "target": "Package",
-              "version": "[1.1.1, )"
+              "version": "[1.2.1, )"
             },
             "SHJ.BaseFramework.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[1.1.1, )"
+              "version": "[1.2.1, )"
             }
           },
           "imports": [

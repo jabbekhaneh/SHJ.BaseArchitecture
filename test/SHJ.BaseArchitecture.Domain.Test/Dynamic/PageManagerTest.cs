@@ -14,7 +14,7 @@ public class PageManagerTest : DomainTestBase
     {
         _commandRepository = new PageEFCommandRepository(DatabaseInMemory);
         _queryable = new PageEFQueryRepository(DatabaseInMemory);
-        _Sut = new PageManager(_queryable, _commandRepository);
+        _Sut = new PageManager(_commandRepository, _queryable);
     }
 
     [Fact]
@@ -61,7 +61,7 @@ public class PageManagerTest : DomainTestBase
         string updateTitle = "HomePage";
 
         //act
-        await _Sut.Update(page.Id, updateTitle);
+        _Sut.Update(page.Id, updateTitle);
         DatabaseInMemory.SaveChanges();
 
         //assert
@@ -69,24 +69,23 @@ public class PageManagerTest : DomainTestBase
     }
 
     [Fact]
-    public async Task UpdatePageById_WhenExecutePageManager_ShouldExceptionNotFoundPage()
+    public void UpdatePageById_WhenExecutePageManager_ShouldExceptionNotFoundPage()
     {
         //arrange
         Guid id = Guid.NewGuid();
 
         //act
-        Func<Task> expected = () => _Sut.Update(id, "FakeId");
+        var actual = Assert.Throws<BaseBusinessException>(() => _Sut.Update(id, "FakeId"));
+
 
         //assert
 
-        await expected.Should().ThrowAsync<BaseBusinessException>();
-        var exception = await Assert.ThrowsAsync<BaseBusinessException>(expected);
-        exception.Code.Should().Be(DomainGlobalErrorCodes.NotFoundPage);
+        actual.Code.Should().Be(DomainGlobalErrorCodes.NotFoundPage);
     }
 
 
     [Fact]
-    public async Task UpdatePageById_WhenExecutePageManager_ShouldExceptionDublicateTitle()
+    public void UpdatePageById_WhenExecutePageManager_ShouldExceptionDublicateTitle()
     {
         //arrange
         var pageOne = new Page("title-on");
@@ -96,12 +95,10 @@ public class PageManagerTest : DomainTestBase
         DatabaseInMemory.SaveChanges();
 
         //act
-        Func<Task> expected = () => _Sut.Update(pageOne.Id, pageTwo.Title);
+        var actual = Assert.Throws<BaseBusinessException>(() => _Sut.Update(pageOne.Id, pageTwo.Title));
 
         //assert
 
-        await expected.Should().ThrowAsync<BaseBusinessException>();
-        var exception = await Assert.ThrowsAsync<BaseBusinessException>(expected);
-        exception.Code.Should().Be(DomainGlobalErrorCodes.DublicatePageTitle);
+        actual.Code.Should().Be(DomainGlobalErrorCodes.DublicatePageTitle);
     }
 }

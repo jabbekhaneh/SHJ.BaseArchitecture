@@ -1,6 +1,9 @@
 ﻿global using SHJ.BaseArchitecture.Web.API;
+using Autofac.Extensions.DependencyInjection;
+using Autofac;
 using SHJ.BaseArchitecture.Application;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
+using SHJ.BaseFramework.DependencyInjection.Modules;
 
 namespace SHJ.BaseArchitecture.Web.API;
 
@@ -11,6 +14,9 @@ public static class HostExtentions
     {
         builder.Services.BuildApplication(builder.Configuration);
         builder.Services.AddSwaggerGen();
+
+        builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                   .ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new AutofacModule()));
         return builder.Build();
     }
     //##################  Application Builder  ####################

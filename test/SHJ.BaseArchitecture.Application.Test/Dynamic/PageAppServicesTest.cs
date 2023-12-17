@@ -31,5 +31,19 @@ public class PageAppServicesTest : BaseControllerTests
         response.StatusCode.Should().Be(HttpStatusCode.OK);
 
     }
-   
+
+    public async Task OnUpdatePage_WhenExecuteController_ShouldReturnOk()
+    {
+        //arrange
+        var page = new UpdatePageDto
+        {
+            Title = "Dummy",
+        };
+        //act
+        var response = await RequestHttp.PutAsync(_Sut, HttpHelper.GetJsonHttpContent(page));
+
+        //assert
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+
+    }
 }

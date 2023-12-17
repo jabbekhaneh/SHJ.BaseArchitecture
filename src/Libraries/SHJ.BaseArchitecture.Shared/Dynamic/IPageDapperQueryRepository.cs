@@ -1,6 +1,6 @@
 ﻿namespace SHJ.BaseArchitecture.Shared.Dynamic;
 
-public interface IPageDapperQueryRepository
+public interface IPageDapperQueryRepository : ITransientDependency
 {
     public Task<bool> IsExistByTitleAsync(string title);
 }
