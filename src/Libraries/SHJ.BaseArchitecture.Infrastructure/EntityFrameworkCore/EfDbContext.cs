@@ -2,21 +2,22 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Options;
 using SHJ.BaseArchitecture.Domain.Dynamic;
+using SHJ.BaseFramework.DependencyInjection.Contracts;
 using SHJ.BaseFramework.Domain;
 using SHJ.BaseFramework.Shared;
 using System.Reflection;
 
 namespace SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 
-public class EfDbContext : DbContext
+public class EfDbContext : DbContext 
 {
     private IOptions<BaseOptions> Options;
     private BaseClaimService ClaimService;
-    //public EfDbContext() { }
+   // public EfDbContext() { }
     public EfDbContext(DbContextOptions<EfDbContext> options, BaseClaimService claimService, IOptions<BaseOptions> baseOptions) : base(options)
     {
-        ClaimService = claimService;
         Options = baseOptions;
+        ClaimService = claimService;
     }
     public virtual DbSet<Page> Pages { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
