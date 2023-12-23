@@ -34,4 +34,14 @@ public class PageManager : BaseDomainService<Page>
 
         page.Title = title;
     }
+
+    public Page GetById(Guid id)
+    {
+        var page = Query.SingleOrDefault(_ => _.Id.Equals(id));
+
+        if (page == null)
+            throw new BaseBusinessException(DomainGlobalErrorCodes.NotFoundPage);
+
+        return page;
+    }
 }

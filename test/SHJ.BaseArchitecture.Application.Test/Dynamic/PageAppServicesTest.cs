@@ -1,7 +1,5 @@
-﻿using Dapper;
-using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
+﻿using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
 using SHJ.BaseArchitecture.Application.Test.Configurations.Fixtures;
-using SHJ.BaseArchitecture.Domain.Dynamic;
 
 namespace SHJ.BaseArchitecture.Application.Test.Dynamic;
 
@@ -14,7 +12,7 @@ public class PageAppServicesTest : BaseControllerTests
     }
 
 
-    public readonly static string _Sut = "/api/Page";
+    private readonly static string _Sut = "/api/v1/Page";
 
     [Fact]
     public async Task OnCreatePage_WhenExecuteController_ShouldReturnOk()

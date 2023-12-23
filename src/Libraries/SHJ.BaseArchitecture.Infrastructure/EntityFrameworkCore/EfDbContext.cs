@@ -13,7 +13,7 @@ public class EfDbContext : DbContext
 {
     private IOptions<BaseOptions> Options;
     private BaseClaimService ClaimService;
-   // public EfDbContext() { }
+    public EfDbContext() { }
     public EfDbContext(DbContextOptions<EfDbContext> options, BaseClaimService claimService, IOptions<BaseOptions> baseOptions) : base(options)
     {
         Options = baseOptions;

@@ -1,23 +1,31 @@
 ﻿global using SHJ.BaseArchitecture.Web.API;
+global using Serilog;
 using Autofac.Extensions.DependencyInjection;
 using Autofac;
 using SHJ.BaseArchitecture.Application;
 using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
 using SHJ.BaseFramework.DependencyInjection.Modules;
+using SHJ.BaseSwagger;
+using Serilog.Events;
+
 
 namespace SHJ.BaseArchitecture.Web.API;
 
 public static class HostExtentions
 {
     //##################  Application Services  ####################
-    public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder ConfigureServices(this WebApplicationBuilder builder)
     {
         builder.Services.BuildApplication(builder.Configuration);
-        builder.Services.AddSwaggerGen();
+        builder.Services.RegisterSwagger(options =>
+        {
+            options.ProjectName = "*** BaseArchitecture API ***";
+        });
 
         builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
                    .ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new AutofacModule()));
-        return builder.Build();
+        
+        return builder;
     }
     //##################  Application Builder  ####################
     public static WebApplication ConfigurePipeline(this WebApplication app)
@@ -26,8 +34,7 @@ public static class HostExtentions
 
         if (app.Environment.IsDevelopment())
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            app.RegisterUseSwaggerAndUI(app.Services);
         }
 
         var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
@@ -40,5 +47,25 @@ public static class HostExtentions
         }
         app.MapControllers();
         return app;
-    } 
+    }
+
+    //##################  Host  Logger  ####################
+    public static WebApplicationBuilder ConfigureHostLogger(this WebApplicationBuilder builder)
+    {
+        
+        Log.Logger = new LoggerConfiguration()
+        .MinimumLevel.Information()
+        .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+        .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
+        .Enrich.FromLogContext()
+        .WriteTo.File("Logs/logs.txt")
+        .WriteTo.Console()
+        .CreateLogger();
+        Log.Information("Starting SHJ.BaseArchitecture.Web.API");
+        builder.Host.UseSerilog();
+        return builder;
+    }
+
+   
+
 }

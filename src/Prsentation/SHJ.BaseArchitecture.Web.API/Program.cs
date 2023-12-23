@@ -1,10 +1,21 @@
-
-
 var builder = WebApplication.CreateBuilder(args);
+try
+{
+    builder.ConfigureServices()
+           .ConfigureHostLogger().Build()
+           .ConfigurePipeline().Run();
 
-var app = builder.ConfigureServices().ConfigurePipeline();
+}
+catch (Exception ex)
+{
+    if (ex is HostAbortedException)
+    {
+        throw;
+    }
 
-app.Run();
+    Log.Fatal(ex, "Host terminated unexpectedly!");
+
+}
 
 
 public partial class Program { }

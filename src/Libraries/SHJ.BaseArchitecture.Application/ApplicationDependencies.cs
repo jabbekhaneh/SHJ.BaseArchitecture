@@ -6,6 +6,7 @@ using SHJ.BaseFramework.AspNet;
 using SHJ.BaseFramework.AspNet.Mvc;
 using SHJ.BaseFramework.Shared;
 using SHJ.ExceptionHandler;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SHJ.BaseArchitecture.Application;
 
@@ -42,11 +43,20 @@ public static class ApplicationDependencies
     {
         app.UseSHJBaseFrameworkAspNet();
         app.UseSHJExceptionHandler();
+    
         app.UseHttpsRedirection();
         app.UseBaseCorsConfig();
 
         return app;
     }
+
+    public async static Task InitializeApplicationAsync([NotNull] this IApplicationBuilder app)
+    {
+
+    }
+
+
+
 
     #region CorsConfig
     public static IApplicationBuilder UseBaseCorsConfig(this IApplicationBuilder app)

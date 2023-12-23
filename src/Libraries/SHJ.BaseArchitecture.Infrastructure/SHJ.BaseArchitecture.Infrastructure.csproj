@@ -6,8 +6,8 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="SHJ.BaseFramework.Dapper" Version="1.2.1" />
-		<PackageReference Include="SHJ.BaseFramework.EntityFrameworkCore" Version="1.2.1" />
+		<PackageReference Include="SHJ.BaseFramework.Dapper" Version="1.3.0" />
+		<PackageReference Include="SHJ.BaseFramework.EntityFrameworkCore" Version="1.3.0" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj" />

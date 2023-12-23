@@ -1,6 +1,4 @@
 ﻿using SHJ.BaseArchitecture.Domain.Dynamic;
-using SHJ.BaseArchitecture.Infrastructure.Dynamic;
-using SHJ.BaseFramework.Repository;
 using SHJ.ExceptionHandler;
 
 namespace SHJ.BaseArchitecture.Domain.Test.Dynamic;

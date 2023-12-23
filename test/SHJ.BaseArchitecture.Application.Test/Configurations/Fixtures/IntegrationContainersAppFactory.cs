@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using SHJ.BaseArchitecture.Application.Test.Configurations.Fakes;
-using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 using SHJ.BaseFramework.AspNet;
-using SHJ.BaseFramework.AspNet.Mvc;
 using SHJ.BaseFramework.Shared;
-using System.Data;
 
 namespace SHJ.BaseArchitecture.Application.Test.Configurations.Fixtures;
 

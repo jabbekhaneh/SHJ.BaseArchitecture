@@ -13,7 +13,11 @@
 
   <ItemGroup>
     <PackageReference Include="ServiceStack.Client" Version="8.0.0" />
-    <PackageReference Include="SHJ.BaseFramework.AspNet" Version="1.2.1" />
+    <PackageReference Include="SHJ.BaseFramework.AspNet" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dynamic\v1\" />
   </ItemGroup>
 
 </Project>

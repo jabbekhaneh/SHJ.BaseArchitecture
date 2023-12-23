@@ -16,6 +16,21 @@ public static class InfrastructureDependencies
         services.BuildEntityframework();
         return services;
     }
+    public static IServiceProvider InitializeDatabase(this IServiceProvider serviceProvider)
+    {
+        var scopeFactory = serviceProvider.GetRequiredService<IServiceScopeFactory>();
+
+        using (var scope = scopeFactory.CreateScope())
+        {
+            var dbInitializer = scope.ServiceProvider.GetService<ISeadData>();
+            dbInitializer.Initialize();
+            dbInitializer.SeedData();
+        }
+        return serviceProvider;
+    }
+
+
+
 
     private static IServiceCollection BuildEntityframework(this IServiceCollection services)
     {
@@ -27,8 +42,10 @@ public static class InfrastructureDependencies
 
     private static IServiceCollection BuildPages(this IServiceCollection services)
     {
-        services.AddScoped<PageManager, PageManager>();
-        
+        services.AddScoped<PageManager, PageManager>(); 
         return services;
     }
+
+
+    
 }
