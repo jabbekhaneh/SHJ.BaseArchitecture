@@ -1,6 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
+
 try
 {
+    var builder = WebApplication.CreateBuilder(args);
     builder.ConfigureServices()
            .ConfigureHostLogger().Build()
            .ConfigurePipeline().Run();

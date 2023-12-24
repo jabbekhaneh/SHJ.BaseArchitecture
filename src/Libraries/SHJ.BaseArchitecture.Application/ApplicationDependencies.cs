@@ -12,7 +12,7 @@ namespace SHJ.BaseArchitecture.Application;
 
 public static class ApplicationDependencies
 {
-    public static IServiceCollection BuildApplication(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection BuildApplication([NotNull]  this IServiceCollection services, IConfiguration configuration)
     {
         services.BuildInfrastructure();
         services.AddSHJExceptionHandler(option => { });
@@ -39,7 +39,7 @@ public static class ApplicationDependencies
         return services;
     }
 
-    public static IApplicationBuilder UseApplication(this IApplicationBuilder app)
+    public static IApplicationBuilder UseApplication([NotNull] this IApplicationBuilder app)
     {
         app.UseSHJBaseFrameworkAspNet();
         app.UseSHJExceptionHandler();
@@ -50,21 +50,13 @@ public static class ApplicationDependencies
         return app;
     }
 
-    public async static Task InitializeApplicationAsync([NotNull] this IApplicationBuilder app)
-    {
-
-    }
-
-
-
-
     #region CorsConfig
-    public static IApplicationBuilder UseBaseCorsConfig(this IApplicationBuilder app)
+    private static IApplicationBuilder UseBaseCorsConfig([NotNull] this IApplicationBuilder app)
     {
         app.UseCors("EnableCorse");
         return app;
     }
-    private static IServiceCollection AddBaseCorsConfig(this IServiceCollection services)
+    private static IServiceCollection AddBaseCorsConfig([NotNull] this IServiceCollection services)
     {
         services.AddCors(option => option.AddPolicy("EnableCorse", builder =>
         {
