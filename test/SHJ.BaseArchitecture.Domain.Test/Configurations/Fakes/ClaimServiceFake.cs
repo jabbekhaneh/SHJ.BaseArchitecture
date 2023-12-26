@@ -2,7 +2,7 @@
 
 namespace SHJ.BaseArchitecture.Domain.Test.Configurations.Fakes;
 
-public class ClaimServiceFake : BaseClaimService
+public class ClaimServiceFake : IBaseClaimService
 {
     public string GetClaim(string key)
     {

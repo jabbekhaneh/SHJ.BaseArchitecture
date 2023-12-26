@@ -12,4 +12,10 @@
 		<ProjectReference Include="..\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj" />
 	</ItemGroup>
 
+
+
+	<ItemGroup>
+	  <Folder Include="Dynamic\DTOs\" />
+	</ItemGroup>
+
 </Project>

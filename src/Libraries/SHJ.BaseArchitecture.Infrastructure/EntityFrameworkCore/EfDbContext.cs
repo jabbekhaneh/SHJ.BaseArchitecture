@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Options;
 using SHJ.BaseArchitecture.Domain.Dynamic;
-using SHJ.BaseFramework.DependencyInjection.Contracts;
 using SHJ.BaseFramework.Domain;
 using SHJ.BaseFramework.Shared;
 using System.Reflection;
@@ -12,9 +11,9 @@ namespace SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 public class EfDbContext : DbContext 
 {
     private IOptions<BaseOptions> Options;
-    private BaseClaimService ClaimService;
+    private IBaseClaimService ClaimService;
     public EfDbContext() { }
-    public EfDbContext(DbContextOptions<EfDbContext> options, BaseClaimService claimService, IOptions<BaseOptions> baseOptions) : base(options)
+    public EfDbContext(DbContextOptions<EfDbContext> options, IBaseClaimService claimService, IOptions<BaseOptions> baseOptions) : base(options)
     {
         Options = baseOptions;
         ClaimService = claimService;

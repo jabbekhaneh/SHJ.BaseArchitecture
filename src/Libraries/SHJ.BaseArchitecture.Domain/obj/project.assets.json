@@ -431,7 +431,7 @@
           }
         }
       },
-      "SHJ.BaseFramework.DependencyInjection/1.3.0": {
+      "SHJ.BaseFramework.DependencyInjection/1.3.1": {
         "type": "package",
         "dependencies": {
           "Autofac": "7.1.0",
@@ -445,10 +445,10 @@
           "lib/net6.0/SHJ.BaseFramework.DependencyInjection.dll": {}
         }
       },
-      "SHJ.BaseFramework.Domain/1.3.0": {
+      "SHJ.BaseFramework.Domain/1.3.1": {
         "type": "package",
         "dependencies": {
-          "SHJ.BaseFramework.Repository": "1.3.0"
+          "SHJ.BaseFramework.Repository": "1.3.1"
         },
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
@@ -457,10 +457,10 @@
           "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
         }
       },
-      "SHJ.BaseFramework.Repository/1.3.0": {
+      "SHJ.BaseFramework.Repository/1.3.1": {
         "type": "package",
         "dependencies": {
-          "SHJ.BaseFramework.DependencyInjection": "1.3.0"
+          "SHJ.BaseFramework.DependencyInjection": "1.3.1"
         },
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Repository.dll": {
@@ -1299,43 +1299,43 @@
         "servicestack.text.nuspec"
       ]
     },
-    "SHJ.BaseFramework.DependencyInjection/1.3.0": {
-      "sha512": "HREhkp1YZSWzh6YMykylX9XPIWRfuCwLBezRhw6I674m47b6Agdy7UtnJaCdMYhuqNWviu3aHBacqvgv6qH04w==",
+    "SHJ.BaseFramework.DependencyInjection/1.3.1": {
+      "sha512": "VZlnQngvq0ySITYUGwcREfAAdWKqLqZP2hGnsgyXNmTZOjCYK+3q+2HZn8ODMcVCaAIGTFe6hLCEienMR3kw7A==",
       "type": "package",
-      "path": "shj.baseframework.dependencyinjection/1.3.0",
+      "path": "shj.baseframework.dependencyinjection/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.DependencyInjection.dll",
         "logo.png",
-        "shj.baseframework.dependencyinjection.1.3.0.nupkg.sha512",
+        "shj.baseframework.dependencyinjection.1.3.1.nupkg.sha512",
         "shj.baseframework.dependencyinjection.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Domain/1.3.0": {
-      "sha512": "CeqzrvFDX2vBJoypjsxQkpwlPWxo6UKdQE+osQIL2KRVksg1S68FbU+fvMskefNW7F0COCL1vCxgkPLPNrULeg==",
+    "SHJ.BaseFramework.Domain/1.3.1": {
+      "sha512": "TkGQctf6skEUEZh1eCtbhdajz6E1m+2joBIB8LbHQgB8/ZeJRmGEOIytVNyd7nt/tDOiohYpj621fPQuuGwViw==",
       "type": "package",
-      "path": "shj.baseframework.domain/1.3.0",
+      "path": "shj.baseframework.domain/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Domain.dll",
         "logo.png",
-        "shj.baseframework.domain.1.3.0.nupkg.sha512",
+        "shj.baseframework.domain.1.3.1.nupkg.sha512",
         "shj.baseframework.domain.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Repository/1.3.0": {
-      "sha512": "T4bR50gYKBQeNWoavam2n2KUzrzmsPpPX+tUgoGZf+CDaHbguo244EbN/UjUOmepvloL2rgB1DERb/x20HC6qw==",
+    "SHJ.BaseFramework.Repository/1.3.1": {
+      "sha512": "nzcFE8cDIm48Z7cfVwEqqWbnRzO7uIgaxGawVvkBb03n0DKf7O80sZH5izkf0bS3lgqy/i54225cvdqPzbprsQ==",
       "type": "package",
-      "path": "shj.baseframework.repository/1.3.0",
+      "path": "shj.baseframework.repository/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Repository.dll",
         "lib/net6.0/SHJ.BaseFramework.Repository.pdb",
         "logo.png",
-        "shj.baseframework.repository.1.3.0.nupkg.sha512",
+        "shj.baseframework.repository.1.3.1.nupkg.sha512",
         "shj.baseframework.repository.nuspec"
       ]
     },
@@ -1663,8 +1663,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "SHJ.BaseFramework.DependencyInjection >= 1.3.0",
-      "SHJ.BaseFramework.Domain >= 1.3.0",
+      "SHJ.BaseFramework.DependencyInjection >= 1.3.1",
+      "SHJ.BaseFramework.Domain >= 1.3.1",
       "SHJ.ExceptionHandler >= 1.0.5"
     ]
   },
@@ -1716,11 +1716,11 @@
         "dependencies": {
           "SHJ.BaseFramework.DependencyInjection": {
             "target": "Package",
-            "version": "[1.3.0, )"
+            "version": "[1.3.1, )"
           },
           "SHJ.BaseFramework.Domain": {
             "target": "Package",
-            "version": "[1.3.0, )"
+            "version": "[1.3.1, )"
           },
           "SHJ.ExceptionHandler": {
             "target": "Package",

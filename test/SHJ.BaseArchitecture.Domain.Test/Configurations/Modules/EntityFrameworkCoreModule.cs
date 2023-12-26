@@ -12,7 +12,7 @@ public class EntityFrameworkCoreModule : Autofac.Module
     protected override void Load(ContainerBuilder builder)
     {
         builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().SingleInstance();
-        builder.RegisterType<ClaimServiceFake>().As<BaseClaimService>().InstancePerDependency();
+        builder.RegisterType<ClaimServiceFake>().As<IBaseClaimService>().InstancePerDependency();
 
         builder.RegisterType<EfDbContext>()
        .InstancePerLifetimeScope()

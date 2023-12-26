@@ -35,7 +35,7 @@ public class IntegrationContainersAppFactory : WebApplicationFactory<Program>, I
                 option.ManualConnectionString = SqlContainerFixture.GetConnectionString();
 
             });
-            services.AddScoped<BaseClaimService, FakeClaimService>();
+            services.AddScoped<IBaseClaimService, FakeClaimService>();
         });
     }
 
