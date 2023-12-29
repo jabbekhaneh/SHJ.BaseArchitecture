@@ -1,14 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Options;
 using SHJ.BaseArchitecture.Domain.Dynamic;
+using SHJ.BaseArchitecture.Domain.Identity;
 using SHJ.BaseFramework.Domain;
 using SHJ.BaseFramework.Shared;
 using System.Reflection;
 
 namespace SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore;
 
-public class EfDbContext : DbContext 
+public class EfDbContext : IdentityDbContext<User,Role,Guid>
 {
     private IOptions<BaseOptions> Options;
     private IBaseClaimService ClaimService;

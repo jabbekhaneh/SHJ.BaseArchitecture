@@ -1,0 +1,1 @@
+2023-12-28 02:19:30.313 -08:00 [INF] Starting SHJ.BaseArchitecture.Web.API

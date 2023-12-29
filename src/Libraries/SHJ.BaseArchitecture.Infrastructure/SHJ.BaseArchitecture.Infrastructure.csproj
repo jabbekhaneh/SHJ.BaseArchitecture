@@ -13,5 +13,8 @@
 	  <ProjectReference Include="..\SHJ.BaseArchitecture.Domain\SHJ.BaseArchitecture.Domain.csproj" />
 	  <ProjectReference Include="..\SHJ.BaseArchitecture.Shared\SHJ.BaseArchitecture.Shared.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Identity\" />
+	</ItemGroup>
 
 </Project>

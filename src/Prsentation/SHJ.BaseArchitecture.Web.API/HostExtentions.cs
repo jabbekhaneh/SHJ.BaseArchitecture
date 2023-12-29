@@ -3,11 +3,10 @@ global using Serilog;
 using Autofac.Extensions.DependencyInjection;
 using Autofac;
 using SHJ.BaseArchitecture.Application;
-using SHJ.BaseArchitecture.Infrastructure.EntityFrameworkCore.Data;
 using SHJ.BaseFramework.DependencyInjection.Modules;
 using SHJ.BaseSwagger;
 using Serilog.Events;
-
+using SHJ.BaseArchitecture.Infrastructure;
 
 namespace SHJ.BaseArchitecture.Web.API;
 
@@ -37,14 +36,8 @@ public static class HostExtentions
             app.RegisterUseSwaggerAndUI(app.Services);
         }
 
-        var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+        app.Services.InitializeDatabase();
 
-        using (var scope = scopeFactory.CreateScope())
-        {
-            var dbInitializer = scope.ServiceProvider.GetService<ISeadData>();
-            dbInitializer.Initialize();
-            dbInitializer.SeedData();
-        }
         app.MapControllers();
         return app;
     }

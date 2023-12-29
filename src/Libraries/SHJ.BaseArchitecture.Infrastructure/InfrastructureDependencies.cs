@@ -14,8 +14,10 @@ public static class InfrastructureDependencies
     {
         services.BuildPages();
         services.BuildEntityframework();
+        services.RegisterIdentity();
         return services;
     }
+
     public static IServiceProvider InitializeDatabase(this IServiceProvider serviceProvider)
     {
         var scopeFactory = serviceProvider.GetRequiredService<IServiceScopeFactory>();
