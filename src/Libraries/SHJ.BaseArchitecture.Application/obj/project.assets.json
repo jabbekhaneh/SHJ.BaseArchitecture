@@ -35,6 +35,35 @@
           }
         }
       },
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[12.0.1]",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Dapper/2.0.123": {
         "type": "package",
         "compile": {
@@ -1297,12 +1326,12 @@
           }
         }
       },
-      "SHJ.BaseFramework.AspNet/1.3.1": {
+      "SHJ.BaseFramework.AspNet/1.4.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.0",
-          "SHJ.BaseFramework.Domain": "1.3.1",
-          "SHJ.BaseFramework.Shared": "1.3.1",
+          "SHJ.BaseFramework.Domain": "1.4.1",
+          "SHJ.BaseFramework.Shared": "1.4.1",
           "Serilog": "3.0.1",
           "Serilog.AspNetCore": "7.0.0"
         },
@@ -1313,15 +1342,15 @@
           "lib/net6.0/SHJ.BaseFramework.AspNet.dll": {}
         }
       },
-      "SHJ.BaseFramework.Dapper/1.3.1": {
+      "SHJ.BaseFramework.Dapper/1.4.1": {
         "type": "package",
         "dependencies": {
           "Dapper": "2.0.123",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.0",
           "Microsoft.Extensions.Options": "8.0.0",
-          "SHJ.BaseFramework.Domain": "1.3.1",
-          "SHJ.BaseFramework.Shared": "1.3.1",
-          "System.Data.SqlClient": "4.8.3"
+          "SHJ.BaseFramework.Domain": "1.4.1",
+          "SHJ.BaseFramework.Shared": "1.4.1",
+          "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Dapper.dll": {}
@@ -1330,7 +1359,7 @@
           "lib/net6.0/SHJ.BaseFramework.Dapper.dll": {}
         }
       },
-      "SHJ.BaseFramework.DependencyInjection/1.3.1": {
+      "SHJ.BaseFramework.DependencyInjection/1.4.1": {
         "type": "package",
         "dependencies": {
           "Autofac": "7.1.0",
@@ -1344,10 +1373,10 @@
           "lib/net6.0/SHJ.BaseFramework.DependencyInjection.dll": {}
         }
       },
-      "SHJ.BaseFramework.Domain/1.3.1": {
+      "SHJ.BaseFramework.Domain/1.4.1": {
         "type": "package",
         "dependencies": {
-          "SHJ.BaseFramework.Repository": "1.3.1"
+          "SHJ.BaseFramework.Repository": "1.4.1"
         },
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
@@ -1356,7 +1385,7 @@
           "lib/net6.0/SHJ.BaseFramework.Domain.dll": {}
         }
       },
-      "SHJ.BaseFramework.EntityFrameworkCore/1.3.1": {
+      "SHJ.BaseFramework.EntityFrameworkCore/1.4.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.0",
@@ -1364,8 +1393,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.0",
           "Microsoft.Extensions.Configuration": "8.0.0",
-          "SHJ.BaseFramework.Domain": "1.3.1",
-          "SHJ.BaseFramework.Shared": "1.3.1"
+          "SHJ.BaseFramework.Domain": "1.4.1",
+          "SHJ.BaseFramework.Shared": "1.4.1"
         },
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.EntityFrameworkCore.dll": {
@@ -1378,10 +1407,10 @@
           }
         }
       },
-      "SHJ.BaseFramework.Repository/1.3.1": {
+      "SHJ.BaseFramework.Repository/1.4.1": {
         "type": "package",
         "dependencies": {
-          "SHJ.BaseFramework.DependencyInjection": "1.3.1"
+          "SHJ.BaseFramework.DependencyInjection": "1.4.1"
         },
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Repository.dll": {
@@ -1394,8 +1423,13 @@
           }
         }
       },
-      "SHJ.BaseFramework.Shared/1.3.1": {
+      "SHJ.BaseFramework.Shared/1.4.1": {
         "type": "package",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "SHJ.BaseFramework.Domain": "1.4.1"
+        },
         "compile": {
           "lib/net6.0/SHJ.BaseFramework.Shared.dll": {}
         },
@@ -1403,21 +1437,17 @@
           "lib/net6.0/SHJ.BaseFramework.Shared.dll": {}
         }
       },
-      "SHJ.BaseSwagger/1.0.0": {
+      "SHJ.BaseSwagger/1.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "compile": {
-          "lib/net6.0/SHJ.BaseSwagger.dll": {
-            "related": ".pdb"
-          }
+          "lib/net6.0/SHJ.BaseSwagger.dll": {}
         },
         "runtime": {
-          "lib/net6.0/SHJ.BaseSwagger.dll": {
-            "related": ".pdb"
-          }
+          "lib/net6.0/SHJ.BaseSwagger.dll": {}
         }
       },
       "SHJ.ExceptionHandler/1.0.5": {
@@ -1646,7 +1676,7 @@
           }
         }
       },
-      "System.Data.SqlClient/4.8.3": {
+      "System.Data.SqlClient/4.8.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
@@ -2006,8 +2036,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "SHJ.BaseFramework.DependencyInjection": "1.3.1",
-          "SHJ.BaseFramework.Domain": "1.3.1",
+          "SHJ.BaseFramework.DependencyInjection": "1.4.1",
+          "SHJ.BaseFramework.Domain": "1.4.1",
           "SHJ.ExceptionHandler": "1.0.5"
         },
         "compile": {
@@ -2024,8 +2054,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "SHJ.BaseArchitecture.Domain": "1.0.0",
           "SHJ.BaseArchitecture.Shared": "1.0.0",
-          "SHJ.BaseFramework.Dapper": "1.3.1",
-          "SHJ.BaseFramework.EntityFrameworkCore": "1.3.1"
+          "SHJ.BaseFramework.Dapper": "1.4.1",
+          "SHJ.BaseFramework.EntityFrameworkCore": "1.4.1"
         },
         "compile": {
           "bin/placeholder/SHJ.BaseArchitecture.Infrastructure.dll": {}
@@ -2089,6 +2119,35 @@
         "lib/netstandard2.0/Autofac.Extensions.DependencyInjection.xml",
         "lib/netstandard2.1/Autofac.Extensions.DependencyInjection.dll",
         "lib/netstandard2.1/Autofac.Extensions.DependencyInjection.xml"
+      ]
+    },
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
       ]
     },
     "Dapper/2.0.123": {
@@ -3894,110 +3953,109 @@
         "servicestack.text.nuspec"
       ]
     },
-    "SHJ.BaseFramework.AspNet/1.3.1": {
-      "sha512": "ooB+xg6kesJfd82jAZga3/baSsNmIBQSpiVN6B2FQXCTyOM4BR/ADo1IlVqhReCKh45UJa/oiCyo008XpAGi/g==",
+    "SHJ.BaseFramework.AspNet/1.4.1": {
+      "sha512": "E2wfTK3RS+0TjLbG1B3HfT8dhEG1M/il1AAEgzrJzvtSJHjt2Iz8/rSp4m4KPTm2/ivOh33Sse/hIjDOSRNvGw==",
       "type": "package",
-      "path": "shj.baseframework.aspnet/1.3.1",
+      "path": "shj.baseframework.aspnet/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.AspNet.dll",
         "logo.png",
-        "shj.baseframework.aspnet.1.3.1.nupkg.sha512",
+        "shj.baseframework.aspnet.1.4.1.nupkg.sha512",
         "shj.baseframework.aspnet.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Dapper/1.3.1": {
-      "sha512": "s6SSzvNUTqsoZNXliEbPYYWBI5lsTXxggTi/I2KouT7qL6s3scXp9VqP5y/ZSp1FvOYdQvULIvLUEVq+T7Wh3g==",
+    "SHJ.BaseFramework.Dapper/1.4.1": {
+      "sha512": "aDZCT0yyXrJOOjgJrPL8PPVaET0NdfJTzAX3orUk4mlcggOUfRevtqkVsnL05h7Y+0vACTS1f7aFeZkhvyeH0w==",
       "type": "package",
-      "path": "shj.baseframework.dapper/1.3.1",
+      "path": "shj.baseframework.dapper/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Dapper.dll",
         "logo.png",
-        "shj.baseframework.dapper.1.3.1.nupkg.sha512",
+        "shj.baseframework.dapper.1.4.1.nupkg.sha512",
         "shj.baseframework.dapper.nuspec"
       ]
     },
-    "SHJ.BaseFramework.DependencyInjection/1.3.1": {
-      "sha512": "VZlnQngvq0ySITYUGwcREfAAdWKqLqZP2hGnsgyXNmTZOjCYK+3q+2HZn8ODMcVCaAIGTFe6hLCEienMR3kw7A==",
+    "SHJ.BaseFramework.DependencyInjection/1.4.1": {
+      "sha512": "zQ7RUo7P59p3FywLj/5s2pbxmqid1s5Ytu8IKZ06GtAn9hw9GCl8R86qXcqdqv4Vrw/L0y1c37znLVLhn8N2rA==",
       "type": "package",
-      "path": "shj.baseframework.dependencyinjection/1.3.1",
+      "path": "shj.baseframework.dependencyinjection/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.DependencyInjection.dll",
         "logo.png",
-        "shj.baseframework.dependencyinjection.1.3.1.nupkg.sha512",
+        "shj.baseframework.dependencyinjection.1.4.1.nupkg.sha512",
         "shj.baseframework.dependencyinjection.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Domain/1.3.1": {
-      "sha512": "TkGQctf6skEUEZh1eCtbhdajz6E1m+2joBIB8LbHQgB8/ZeJRmGEOIytVNyd7nt/tDOiohYpj621fPQuuGwViw==",
+    "SHJ.BaseFramework.Domain/1.4.1": {
+      "sha512": "tjGh+PZvfHhFQcCHhdwwNWRPpeb7Rp1U6xjTBNVRrfhWspg9UktE0yKwb7zZR+vFxxXC9qWD9EOYmolK06MrWQ==",
       "type": "package",
-      "path": "shj.baseframework.domain/1.3.1",
+      "path": "shj.baseframework.domain/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Domain.dll",
         "logo.png",
-        "shj.baseframework.domain.1.3.1.nupkg.sha512",
+        "shj.baseframework.domain.1.4.1.nupkg.sha512",
         "shj.baseframework.domain.nuspec"
       ]
     },
-    "SHJ.BaseFramework.EntityFrameworkCore/1.3.1": {
-      "sha512": "BWi34hVz33vPQ92TCEhwhkMtpPMFfBFkW3gCt0q9qnHgGG5mgVpOQ/Fun4TEO9ZyRHtEQv+3Z0V4Upkqb93rkg==",
+    "SHJ.BaseFramework.EntityFrameworkCore/1.4.1": {
+      "sha512": "0rxstwajO+P2dsgtKG56FEMCG2daHBbqUbrfUSDDpmmZoHIKd8ICEiQIkJsbIBxm8ZPJTbRbA4sNlRDL1+JaiA==",
       "type": "package",
-      "path": "shj.baseframework.entityframeworkcore/1.3.1",
+      "path": "shj.baseframework.entityframeworkcore/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.EntityFrameworkCore.dll",
         "lib/net6.0/SHJ.BaseFramework.EntityFrameworkCore.runtimeconfig.json",
         "logo.png",
-        "shj.baseframework.entityframeworkcore.1.3.1.nupkg.sha512",
+        "shj.baseframework.entityframeworkcore.1.4.1.nupkg.sha512",
         "shj.baseframework.entityframeworkcore.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Repository/1.3.1": {
-      "sha512": "nzcFE8cDIm48Z7cfVwEqqWbnRzO7uIgaxGawVvkBb03n0DKf7O80sZH5izkf0bS3lgqy/i54225cvdqPzbprsQ==",
+    "SHJ.BaseFramework.Repository/1.4.1": {
+      "sha512": "iMNA1Uya6VAP7vx19ExnyNnH7MQ9cgYwkhcohSjndn9Cl7Q0vaTk5zmzRYpO9Qoaz5ffE8d7lC2Du69a6Hj39Q==",
       "type": "package",
-      "path": "shj.baseframework.repository/1.3.1",
+      "path": "shj.baseframework.repository/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Repository.dll",
         "lib/net6.0/SHJ.BaseFramework.Repository.pdb",
         "logo.png",
-        "shj.baseframework.repository.1.3.1.nupkg.sha512",
+        "shj.baseframework.repository.1.4.1.nupkg.sha512",
         "shj.baseframework.repository.nuspec"
       ]
     },
-    "SHJ.BaseFramework.Shared/1.3.1": {
-      "sha512": "SAuG2Wb7+0v5xKaOtbqoGMmn3DscuRTG/YoCnIdCIoFEJd2gNQ8kG82p/Gu0THnTmbRyZqAiU05lTvydFkQUwQ==",
+    "SHJ.BaseFramework.Shared/1.4.1": {
+      "sha512": "zwHc9dVHUxCxLn4t+Jbhr0XCrTRDFINIloq9TuOYv4ZkRHPraPWBZL9D+BI0shHnBxyqdoh2aPJbAPw27p7ZIg==",
       "type": "package",
-      "path": "shj.baseframework.shared/1.3.1",
+      "path": "shj.baseframework.shared/1.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseFramework.Shared.dll",
         "logo.png",
-        "shj.baseframework.shared.1.3.1.nupkg.sha512",
+        "shj.baseframework.shared.1.4.1.nupkg.sha512",
         "shj.baseframework.shared.nuspec"
       ]
     },
-    "SHJ.BaseSwagger/1.0.0": {
-      "sha512": "/6+URxsXW0AW+mduJMGh+PhFoAVDxIZjf5JDG61aon4xeF/hZ83w1MMnDYKI+dffXPcQNy2co+9Mua8JbzIqsA==",
+    "SHJ.BaseSwagger/1.0.1": {
+      "sha512": "k7txjNTbqaZvRewoEBw2XZu5X9z6XkuII6nejof5zv3k/oNIi9ynEHy3yMnXP/Fz5GgvN4oYIQnJr6foWNBO/g==",
       "type": "package",
-      "path": "shj.baseswagger/1.0.0",
+      "path": "shj.baseswagger/1.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/SHJ.BaseSwagger.dll",
-        "lib/net6.0/SHJ.BaseSwagger.pdb",
         "logo.png",
-        "shj.baseswagger.1.0.0.nupkg.sha512",
+        "shj.baseswagger.1.0.1.nupkg.sha512",
         "shj.baseswagger.nuspec"
       ]
     },
@@ -4216,10 +4274,10 @@
         "version.txt"
       ]
     },
-    "System.Data.SqlClient/4.8.3": {
-      "sha512": "yERfVLXAY0QbylAgaGLByYN0hFxX28aeEQ0hUgJO+Ntn1AfmWl5HHUoYJA0Yl9HhIUUJHVaS/Sw/RLZr5aaC+A==",
+    "System.Data.SqlClient/4.8.5": {
+      "sha512": "fRqxut4lrndPHrXD+ht1XRmCL3obuKldm4XjCRYS9p5f7FSR7shBxAwTkDrpFMsHC9BhNgjjmUtiIjvehn5zkg==",
       "type": "package",
-      "path": "system.data.sqlclient/4.8.3",
+      "path": "system.data.sqlclient/4.8.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4296,7 +4354,7 @@
         "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.xml",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.dll",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.xml",
-        "system.data.sqlclient.4.8.3.nupkg.sha512",
+        "system.data.sqlclient.4.8.5.nupkg.sha512",
         "system.data.sqlclient.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -4951,8 +5009,8 @@
     "net6.0": [
       "SHJ.BaseArchitecture.Application.Contracts >= 1.0.0",
       "SHJ.BaseArchitecture.Infrastructure >= 1.0.0",
-      "SHJ.BaseFramework.AspNet >= 1.3.1",
-      "SHJ.BaseSwagger >= 1.0.0",
+      "SHJ.BaseFramework.AspNet >= 1.4.1",
+      "SHJ.BaseSwagger >= 1.0.1",
       "ServiceStack.Client >= 8.0.0"
     ]
   },
@@ -5011,11 +5069,11 @@
         "dependencies": {
           "SHJ.BaseFramework.AspNet": {
             "target": "Package",
-            "version": "[1.3.1, )"
+            "version": "[1.4.1, )"
           },
           "SHJ.BaseSwagger": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "ServiceStack.Client": {
             "target": "Package",
@@ -5038,7 +5096,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SHJ.BaseArchitecture.Infrastructure
 build_property.ProjectDir = E:\mygit\SHJ.BaseArchitecture\src\Libraries\SHJ.BaseArchitecture.Infrastructure\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -48,11 +48,11 @@
           "dependencies": {
             "SHJ.BaseFramework.DependencyInjection": {
               "target": "Package",
-              "version": "[1.3.1, )"
+              "version": "[1.4.1, )"
             },
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
-              "version": "[1.3.1, )"
+              "version": "[1.4.1, )"
             },
             "SHJ.ExceptionHandler": {
               "target": "Package",
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,40 +1,39 @@
-﻿using SHJ.BaseArchitecture.Application.Contracts.Dynamic;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using SHJ.BaseArchitecture.Application.Contracts.Dynamic;
 using SHJ.BaseArchitecture.Application.Contracts.Dynamic.DTOs;
 using SHJ.BaseArchitecture.Domain.Dynamic;
-using SHJ.BaseFramework.AspNet.Attributes;
 using SHJ.BaseFramework.AspNet.Services;
 using SHJ.BaseFramework.Repository;
 
 namespace SHJ.BaseArchitecture.Application.Dynamic.v1;
 
 
-[ControllerName("Page")]
+[BaseControllerName("Page")]
 public class PageAppServices : BaseAppService<Page>, IPageAppServices
 {
-
-    private readonly IBaseCommandUnitOfWork _unitOfWork;
     private readonly PageManager _manager;
-    public PageAppServices(IBaseCommandUnitOfWork unitOfWork, PageManager manager)
+
+    public PageAppServices(IBaseCommandRepository<Page> commandRepository, IBaseQueryableRepository<Page> queryableRepository, IMapper mapper, IBaseCommandUnitOfWork unitOfWork, PageManager manager) : base(commandRepository, queryableRepository, mapper, unitOfWork)
     {
-        _unitOfWork = unitOfWork;
         _manager = manager;
     }
 
-    [Microsoft.AspNetCore.Mvc.HttpPost]
+    [HttpPost]
     public async Task Create(CreatePageDto input)
     {
         await _manager.Insert(input.Title);
-        _unitOfWork.Commit();
+        await UnitOfWork.CommitAsync();
     }
 
-    [Microsoft.AspNetCore.Mvc.HttpPut]
+    [HttpPut]
     public async Task Update(UpdatePageDto input)
     {
         _manager.Update(input.Id, input.Title);
-        await _unitOfWork.CommitAsync();
+        await UnitOfWork.CommitAsync();
     }
 
-    [Microsoft.AspNetCore.Mvc.HttpGet]
+    [HttpGet]
     public async Task<GetPageByIdDto> GetById(Guid id)
     {
         return new GetPageByIdDto();
