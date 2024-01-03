@@ -48,11 +48,11 @@
           "dependencies": {
             "SHJ.BaseFramework.DependencyInjection": {
               "target": "Package",
-              "version": "[1.4.1, )"
+              "version": "[1.5.0, )"
             },
             "SHJ.BaseFramework.Domain": {
               "target": "Package",
-              "version": "[1.4.1, )"
+              "version": "[1.5.0, )"
             },
             "SHJ.ExceptionHandler": {
               "target": "Package",
